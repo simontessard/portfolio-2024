@@ -6,7 +6,7 @@ import {Footer} from "@/app/partials/Footer";
 
 export default function Home() {
   return (
-    <main className="container">
+    <main>
         <Header/>
         <HeroHeader />
         <Skills/>
