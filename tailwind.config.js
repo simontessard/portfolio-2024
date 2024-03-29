@@ -9,7 +9,8 @@ module.exports = {
     extend: {
       fontFamily: {
         mori: ["PP Mori", "sans-serif"],
-        sans: ["Sans", "sans-serif"],
+        sans: ["PP Right", "sans-serif"],
+        marbry: ["Marbry", "sans-serif"],
       },
     },
     container: {

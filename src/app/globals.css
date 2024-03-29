@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "PP Mori";
+    src: url("assets/fonts/PPMori-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "PP Right";
+    src: url("assets/fonts/PPRightSans-Medium.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Marbry";
+    src: url("assets/fonts/MabryPro-Light.woff") format("woff");
+}
+
+body {
+    font-family: "PP Mori", sans-serif;
+}
+
 @media screen and (min-width: 768px) {
     HTML {
         font-size: 1.1vw;
@@ -13,4 +32,44 @@
         font-size: 0.9vw;
     }
 }
+
+/* horizontal scroll */
+
+#horizontal-scoll {
+    margin-bottom: 50px;
+}
+
+.horizontal-scoll-wrapper {
+    overflow: hidden;
+    height: 525px;
+}
+
+.horizontal {
+    display: flex;
+    height: 100%;
+}
+
+.horizontal > div {
+    display: flex;
+    flex-shrink: 0;
+    padding: 0 5px;
+}
+
+.horizontal > div:first-child {
+    padding: 0 5px 0 15px;
+}
+
+.horizontal > div:last-child {
+    padding: 0 15px 0 5px;
+}
+
+.horizontal .card {
+    align-items: stretch;
+    width: 540px;
+    padding: 50px 40px;
+    background: #6e4ce1;
+    border-radius: 38px;
+    color: #f6f2e8;
+}
+
 
