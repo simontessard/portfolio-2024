@@ -6,9 +6,9 @@ import Swiper from 'swiper';
 import 'swiper/css';
 
 export function Skills() {
-    const swiper = new Swiper('.swiper', {
-        slidesPerView: 3
-    });
+    // const swiper = new Swiper('.swiper', {
+    //    slidesPerView: 3
+    // });
   return (
       <div className="container max-md:px-4 text-white mb-8 md:mb-20">
           <BigTitle title="Skills"/>
