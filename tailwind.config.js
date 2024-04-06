@@ -12,6 +12,9 @@ module.exports = {
         sans: ["PP Right", "sans-serif"],
         marbry: ["Marbry", "sans-serif"],
       },
+        colors: {
+            'black-light': "#282828",
+        },
     },
     container: {
       center: true,

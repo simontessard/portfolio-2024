@@ -1,17 +1,8 @@
-import {Project} from "@/app/pages/home/cards/Project";
-import {BigTitle} from "@/app/components/BigTitle";
+import { Project } from "@/app/pages/home/cards/Project";
+import { BigTitle } from "@/app/components/BigTitle";
+import { projects } from "@/app/data/data";
 
 export function Projects() {
-    const projects = [
-        { type: "small", title: "Projet 1", tag: "HTML", description: "Lorem ipsum nadare" },
-        { type: "large", title: "Projet 2", tag: "CSS", description: "Dolor sit amet" },
-        { type: "large", title: "Projet 3", tag: "JavaScript", description: "Consectetur adipiscing elit" },
-        { type: "small", title: "Projet 4", tag: "JavaScript", description: "Consectetur adipiscing elit" },
-        { type: "small", title: "Projet 1", tag: "HTML", description: "Lorem ipsum nadare" },
-        { type: "large", title: "Projet 2", tag: "CSS", description: "Dolor sit amet" },
-        { type: "large", title: "Projet 3", tag: "JavaScript", description: "Consectetur adipiscing elit" },
-        { type: "small", title: "Projet 4", tag: "JavaScript", description: "Consectetur adipiscing elit" },
-    ];
   return (
     <div className="container max-md:px-4 bg-black text-white mb-8 md:mb-20">
         <BigTitle title="Projects"/>
@@ -19,9 +10,11 @@ export function Projects() {
             {projects.map((project, index) => (
                 <Project
                     key={index}
-                    type={project.type}
+                    id={index}
+                    type={index % 3 === 0 ? 'small' : 'large'}
                     title={project.title}
-                    tag={project.tag}
+                    tag={project.technologies}
+                    color={project.color}
                     description={project.description}
                 />
             ))}
