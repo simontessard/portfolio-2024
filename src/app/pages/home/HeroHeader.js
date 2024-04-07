@@ -1,14 +1,14 @@
 import bg from '@/app/assets/img/about-bg.png';
 export function HeroHeader() {
   return (
-          <div className="relative flex max-md:py-20 text-white h-[calc(100dvh_-_4rem)] md:h-dvh"
+          <div className="relative flex max-md:py-20 text-white h-screen md:h-dvh"
               // style={{backgroundImage: `url(${bg.src})`}}
           >
           <div className="container flex max-md:flex-col items-center justify-between mx-auto w-full"
               >
               <div className="flex flex-col justify-center max-md:text-center">
                   <h1 className="flex flex-col font-sans font-bold text-6xl md:text-9xl uppercase mb-4 md:mb-6">
-                      <span>Simon</span>
+                      <span className={"italic"}>Simon</span>
                       <span>TESSARD</span>
                   </h1>
                   <span className="text-4xl md:hidden mt-2 mb-4">👨🏼‍💻</span>

@@ -5,6 +5,7 @@ import { Skills } from "@/app/pages/home/Skills";
 import { Footer } from "@/app/partials/Footer";
 import About from "@/app/pages/home/About";
 import TechList from "@/app/utils/TechList";
+import { MediumTitle } from "@/app/components/MediumTitle";
 
 export default function Home() {
   return (
@@ -13,6 +14,9 @@ export default function Home() {
         <HeroHeader />
         <About/>
         <Skills/>
+        <div className={"container max-md:px-4"}>
+            <MediumTitle title="Ce que j'utilise le plus :"/>
+        </div>
         <TechList />
         <Projects/>
         <Footer/>

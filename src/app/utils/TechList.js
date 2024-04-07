@@ -60,7 +60,7 @@ const TechList = () => {
                                   style={{ color: index === 7 && tech_color ? tech_color : "inherit",}}>
                                 {tech_name}
                             </span>
-                            <span className="text-8xl"> • </span>
+                            <span className="text-5xl font-mono"> • </span>
                         </React.Fragment>))}
                 </div>
             ))}
