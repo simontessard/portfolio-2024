@@ -1,11 +1,7 @@
-import bg from '@/app/assets/img/about-bg.png';
 export function HeroHeader() {
   return (
-          <div className="relative flex max-md:py-20 text-white h-screen md:h-dvh"
-              // style={{backgroundImage: `url(${bg.src})`}}
-          >
-          <div className="container flex max-md:flex-col items-center justify-between mx-auto w-full"
-              >
+          <div className="js-hero_header relative flex max-md:py-20 text-white h-screen md:h-dvh">
+          <div className="container flex max-md:flex-col items-center justify-between mx-auto w-full">
               <div className="flex flex-col justify-center max-md:text-center">
                   <h1 className="flex flex-col font-sans font-bold text-6xl md:text-9xl uppercase mb-4 md:mb-6">
                       <span className={"italic"}>Simon</span>
@@ -21,7 +17,6 @@ export function HeroHeader() {
                   <span className="text-sm">Scroll</span>
                   <span className="font-marbry text-xl">↓</span>
               </div>
-
           </div>
       </div>
   );
