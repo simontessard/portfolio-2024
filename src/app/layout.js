@@ -1,5 +1,6 @@
 import "./globals.css";
 import SmoothScrolling from "@/app/utils/SmoothScrolling";
+import {Footer} from "@/app/partials/Footer";
 
 export const metadata = {
   title: "Simon Portfolio",
@@ -12,6 +13,7 @@ export default function RootLayout({ children }) {
       <body className="bg-black">
         <SmoothScrolling>
           {children}
+            <Footer/>
         </SmoothScrolling>
       </body>
     </html>

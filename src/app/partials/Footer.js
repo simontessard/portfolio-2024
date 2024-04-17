@@ -4,8 +4,8 @@ import Link from "next/link";
 import bg from "@/app/assets/img/about-bg.png";
 export function Footer() {
     return (
-        <footer className="bg-black pb-4" style={{backgroundImage: `url(${bg.src})`}}>
-            <div className="container relative md:h-40 flex max-md:flex-col md:items-center text-white justify-between max-md:px-6 max-md:mb-6">
+        <footer className="bg-black py-4 md:py-8" style={{backgroundImage: `url(${bg.src})`}}>
+            <div className="container max-w-none relative md:h-40 flex max-md:flex-col md:items-center text-white justify-between px-6 md:px-10 max-md:mb-6">
                 <div className="flex flex-col items-start gap-2 md:gap-3 text-sm md:text-4xl max-md:mb-2">
                     <Link href="" className="text-center uppercase">
                         <span className="mr-2 text-xl md:text-4xl font-marbry">↗</span>

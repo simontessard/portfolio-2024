@@ -35,7 +35,7 @@ export default function DesktopNav() {
     }, []);
     return (
         <nav
-            className="js-desktop_nav max-md:hidden fixed z-20 p-4 bg-white right-0 bottom-0 top-0 m-auto w-fit h-fit shadow">
+            className="js-desktop_nav hidden fixed z-20 p-4 bg-white right-0 bottom-0 top-0 m-auto w-fit h-fit shadow">
             <ul className="flex flex-col items-center gap-1 text-black text-2xl">
                 <li>•</li>
                 <li>•</li>

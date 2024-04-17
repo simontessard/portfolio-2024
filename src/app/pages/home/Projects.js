@@ -6,7 +6,7 @@ export function Projects() {
   return (
     <div className="container max-md:px-4 bg-black text-white py-20">
         <BigTitle title="Projects"/>
-        <div className="grid md:grid-cols-5 gap-6">
+        <div className="grid md:grid-cols-5 gap-6 md:gap-10">
             {projects.map((project, index) => (
                 <Project
                     key={index}
