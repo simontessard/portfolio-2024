@@ -5,8 +5,8 @@ import DesktopNav from "@/app/partials/DesktopNav";
 export function Header() {
     return (
         <header>
-            <span className="max-md:hidden absolute right-16 top-14 text-2xl px-2">🇫🇷</span>
-            <div className="md:hidden bg-black p-2">
+            <span className="hidden absolute right-16 top-14 text-2xl px-2">🇫🇷</span>
+            <div className="hidden bg-black p-2">
                 <div className="container bg-black py-4 px-4 md:px-6 h-16 flex justify-between items-center rounded">
                     <Image
                         src={Logo}

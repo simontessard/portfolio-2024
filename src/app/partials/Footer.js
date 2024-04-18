@@ -11,10 +11,6 @@ export function Footer() {
                         <span className="mr-2 text-xl md:text-4xl font-marbry">↗</span>
                         simon.tessard@gmail.com
                     </Link>
-                    <Link href="" className="text-center">
-                    <span className="mr-2 text-xl md:text-4xl font-marbry">↗</span>
-                        06 72 34 78 98
-                    </Link>
                 </div>
                 <Image
                     className={"absolute top-0 right-0 left-0 bottom-0 m-auto max-md:size-6"}

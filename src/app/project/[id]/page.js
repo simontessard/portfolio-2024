@@ -4,47 +4,19 @@ import Template from "@/app/utils/PageTransition";
 import {useLayoutEffect, useRef} from "react";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
-import Link from "next/link";
-import {Button} from "@/app/components/Button";
-import BottomPreviem from "@/app/project/BottomPreview";
+import {Button} from "@/app/components/Buttons/Button";
+import BottomPreview from "@/app/project/BottomPreview";
+import Index from "@/app/project/Description";
+import ProjectHeader from "@/app/project/ProjectHeader";
 
 export default function ProjectPage() {
     const params = useParams();
 
-    const backgroundImg = useRef(null);
-    const title = useRef(null);
     const section = useRef(null);
-    const goBackButton = useRef(null);
     const contentSection = useRef(null);
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-
-        const tl = gsap.timeline(
-            {
-                scrollTrigger: {
-                    trigger: document.documentElement,
-                    start: "top",
-                    end: "+=100px",
-                    scrub: 1,
-                },
-            }
-        );
-        tl.fromTo(backgroundImg.current, {
-            clipPath: "inset(25%)",
-        }, {
-            y : 150,
-            clipPath: "inset(0%)",
-        }, 0);
-        tl.to(title.current, {
-            y: 100,
-        }, 0);
-        tl.to(title.current, {
-            opacity: 1,
-        }, 0)
-        tl.to(goBackButton.current, {
-            opacity: 1,
-        }, 0.5)
 
         const tl2 = gsap.timeline(
             {
@@ -62,20 +34,18 @@ export default function ProjectPage() {
     return (
         <section className="flex flex-col items-center text-white">
             <Template/>
-            <div className={"relative h-screen w-full overflow-hidden"}>
-                <Link ref={goBackButton} href={"/"} className={"opacity-0 absolute z-10 top-64 left-20"}>← Retour</Link>
-                <img className={"w-full h-full object-cover"} ref={backgroundImg} src="https://picsum.photos/2000/1100"
-                     alt="random"/>
-                <div className={"absolute z-0 flex flex-col items-center justify-center top-0 h-full w-full "}>
-                    <h1 ref={title} className={"opacity-0 p-4 font-bold font-marbry text-4xl md:text-8xl mb-4"}>
-                        Project Page </h1>
-                </div>
-            </div>
-            <div ref={section} className={"flex flex-col gap-12 items-center w-full z-10"}>
-                <div className={"bg-white w-full mb-32"}>
-                    <div className={"container flex items-center justify-between text-black p-8"}>
-                        <span className={"font-bold text-black rounded"}>ID : {params.id}</span>
-                        <Button text={"SEE LIVE APP"} href={"/"}/>
+            <ProjectHeader/>
+            <div ref={section} className={"flex flex-col gap-12 mt-20 items-center w-full z-10"}>
+                <div className={"bg-white w-full px-4 mb-32"}>
+                    <div className={"container flex flex-col items-center justify-between text-black py-8"}>
+                        <div className={"flex justify-between w-full mb-8"}>
+                            <span className={"font-bold text-black rounded"}>ID : {params.id}</span>
+                            <Button text={"SEE LIVE APP"} href={"/"}/>
+                        </div>
+                        <ul className={"flex flex-col gap-8 w-full text-white md:text-4xl font-marbry"}>
+                            <li className={"bg-black w-fit px-6 pt-4 pb-3.5"}>Angular</li>
+                            <li className={"bg-black w-fit px-6 pt-4 pb-3.5"}>Tailwind</li>
+                        </ul>
                     </div>
                 </div>
                 <div ref={contentSection}>
@@ -113,7 +83,8 @@ export default function ProjectPage() {
                              src="https://picsum.photos/1800/1100" alt="random"/>
                     </div>
                 </div>
-                <BottomPreviem id={params.id}/>
+                <Index/>
+                <BottomPreview id={params.id}/>
             </div>
         </section>
     );

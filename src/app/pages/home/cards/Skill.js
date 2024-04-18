@@ -1,6 +1,6 @@
 export function Skill({title, description, color}) {
   return (
-    <a href="#" className="panel swiper-slide !h-52 !flex flex-col justify-between p-4 w-full !rounded bg-purple-500">
+    <a href="#" className="panel swiper-slide !h-52 !flex flex-col justify-between p-4 w-[50vw] !rounded bg-purple-500">
         <div className="self-end">
             <svg className={"size-16 md:size-20"} viewBox="0 0 138 138" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" fill="#1C1C1C"

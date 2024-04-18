@@ -9,7 +9,7 @@ export function Project({ type, title, tag, description, id, color }) {
                 <h4 className="text-3xl md:text-4xl">{title}</h4>
                 <div className="flex gap-2">
                     {tag.map((tagItem, index) => (
-                        <span key={index} className="w-fit bg-white text-black text-xs pt-2 pb-1.5 px-3 rounded">{tagItem}</span>
+                        <span key={index} className="w-fit bg-white text-black text-xs pt-2 pb-1.5 px-3">{tagItem}</span>
                     ))}
                 </div>
                 <p className="line-clamp-3 text-sm">{description}</p>

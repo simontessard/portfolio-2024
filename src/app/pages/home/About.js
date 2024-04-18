@@ -1,5 +1,4 @@
 import {BigTitle} from "@/app/components/BigTitle";
-import {Button} from "@/app/components/Button";
 
 export default function About(){
     return (
