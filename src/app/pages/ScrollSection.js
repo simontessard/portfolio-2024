@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 function ScrollSection() {
     const sectionRef = useRef(null);
     const triggerRef = useRef(null);
+    const instruction = useRef(null);
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -27,6 +28,9 @@ function ScrollSection() {
                     scrub: 0.6,
                     pin: true,
                 },
+                onComplete: () => {
+                    instruction.current.style.opacity = 0;
+                }
             }
         );
         return () => {
@@ -38,18 +42,19 @@ function ScrollSection() {
     const skills = ['Front-end', 'Back-end', 'Full-stack', 'DevOps'];
 
     return (
-        <section className="scroll-section-outer overflow-hidden text-white text-6xl">
+        <section className="overflow-hidden text-white text-6xl">
             {/* The section up act just as a wrapper. If the trigger (below) is the
       first jsx element in the component, you get an error on route change */}
 
             {/* The div below act just as a trigger. As the doc suggests, the trigger and
       the animation should alway be two separated refs */}
-            <div ref={triggerRef}>
-                <div ref={sectionRef} className="scroll-section-inner h-dvh w-[400vw] flex relative">
+            <div ref={triggerRef} className={"relative"}>
+                <p ref={instruction} className={"absolute text-xl uppercase flex justify-center w-full bottom-20"}>Keep scrolling</p>
+                <div ref={sectionRef} className="h-dvh w-[400vw] flex relative">
                     {skills.map((skill, index) => (
                         <div key={index} className="h-dvh w-dvw flex justify-center items-center">
                             <a href="#"
-                               className="relative h-[40dvh] flex flex-col justify-between p-4 md:p-8 w-[70vw] md:w-[60vw] bg-purple-500">
+                               className="relative h-[30dvh] md:h-[40dvh] flex flex-col justify-between p-4 md:p-8 w-[80vw] md:w-[60vw] bg-purple-500">
                                 <div className="self-end">
                                     <svg className={"size-16 md:size-20"} viewBox="0 0 138 138" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
