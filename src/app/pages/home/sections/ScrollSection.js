@@ -2,12 +2,14 @@
 import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import ScrollDownButton from "@/app/components/Buttons/ScrollDownButton";
 
 // https://www.youtube.com/watch?v=PeFqGrEHnp0&ab_channel=IvanSmiths
 function ScrollSection() {
     const sectionRef = useRef(null);
     const triggerRef = useRef(null);
     const instruction = useRef(null);
+    const scrollDownButton = useRef(null);
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -29,10 +31,16 @@ function ScrollSection() {
                     pin: true,
                 },
                 onComplete: () => {
-                    instruction.current.style.opacity = 0;
+                    tl.restart();
                 }
             }
         );
+        const tl = gsap.timeline({paused: true});
+        tl.to(scrollDownButton.current, {
+            duration: 1,
+            y : 50
+        });
+
         return () => {
             {/* A return function for killing the animation on component unmount */ }
             pin.kill();
@@ -49,7 +57,11 @@ function ScrollSection() {
             {/* The div below act just as a trigger. As the doc suggests, the trigger and
                 the animation should alway be two separated refs */}
             <div ref={triggerRef} className={"relative"}>
-                <p ref={instruction} className={"absolute text-xl uppercase flex justify-center w-full bottom-20"}>Keep scrolling</p>
+                <div ref={instruction} className={"absolute text-sm uppercase flex justify-center w-full bottom-20 overflow-hidden"}>
+                    <div ref={scrollDownButton}>
+                        <ScrollDownButton/>
+                    </div>
+                </div>
                 <div ref={sectionRef} className="h-dvh w-[400vw] flex relative">
                     {skills.map((skill, index) => (
                         <div key={index} className="h-dvh w-dvw flex justify-center items-center">
