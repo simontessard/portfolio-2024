@@ -11,30 +11,38 @@ export default function About(){
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.to([text.current], {
-            scrollTrigger: {
-                trigger: text.current,
-                start: "bottom bottom",
-                end: "top 35%",
-                scrub: 1,
-            },
-            y: -100,
+        let mm = gsap.matchMedia();
+
+        // Desktop setup
+        mm.add("(min-width: 800px)", () => {
+            gsap.to([text.current], {
+                scrollTrigger: {
+                    trigger: text.current,
+                    start: "bottom bottom",
+                    scrub: 1,
+                },
+                y: -100,
+            });
         });
-        gsap.to([square.current], {
-            scrollTrigger: {
-                trigger: text.current,
-                start: "top bottom",
-                end: "top 35%",
-                scrub: 1,
-            },
-            y: -50,
+
+        // Mobile setup
+        mm.add("(max-width: 799px)", () => {
+            gsap.to([text.current], {
+                scrollTrigger: {
+                    trigger: text.current,
+                    start: "bottom bottom",
+                    scrub: 1,
+                },
+                y: -30,
+            });
         });
+
     });
     return (
-        <section className="js-section_about bg-white py-8 pb-20 md:pt-20">
+        <section className="js-section_about bg-white py-16 md:py-24">
             <div className={"container flex flex-col max-md:px-4"}>
                 <BigTitle title="à propos" color={"black"}/>
-                <div className={"self-end mb-8"}>
+                <div className={"self-end mb-12"}>
                     <GithubButton/>
                 </div>
             </div>
