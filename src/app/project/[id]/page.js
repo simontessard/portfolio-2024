@@ -42,48 +42,41 @@ export default function ProjectPage() {
                             <span className={"font-bold text-black rounded"}>ID : {params.id}</span>
                             <Button text={"SEE LIVE APP"} href={"/"}/>
                         </div>
-                        <ul className={"flex flex-col gap-8 w-full text-white md:text-4xl font-marbry"}>
+                        <ul className={"flex gap-8 w-full text-white md:text-4xl font-marbry"}>
                             <li className={"bg-black w-fit px-6 pt-4 pb-3.5"}>Angular</li>
                             <li className={"bg-black w-fit px-6 pt-4 pb-3.5"}>Tailwind</li>
                         </ul>
                     </div>
                 </div>
                 <div ref={contentSection}>
-                    <p className={"font-marbry md:text-3xl p-4 text-center max-w-4xl mb-12"}>Suspendisse potenti. Quisque vel
-                        molestie felis,
-                        eget viverra velit. Duis
-                        eget placerat
-                        lectus. In vitae purus nec metus feugiat lacinia.
-                        Mauris ac pretium purus, ac convallis lectus. Donec ut elit magna. Vestibulum turpis turpis,
-                        hendrerit a
-                        nunc et, accumsan consequat tortor.
-                        Nulla feugiat, erat a mattis maximus, erat libero ultricies elit, nec ultrices risus magna eu
-                        mi.</p>
-                    <div className={"flex max-md:flex-col gap-6 items-center"}>
+                    <Index/>
+                    <div className={"mt-20 flex max-md:flex-col gap-8 md:gap-20 items-center md:mb-40"}>
                         <div className={"overflow-hidden w-full h-full aspect-square"}>
                             <img
                                 className={"aspect-square max-w-lg object-cover md:hover:scale-100 scale-110 transition-transform duration-500 w-full h-full mb-8"}
                                 src="https://picsum.photos/1900/1100" alt="random"/>
                         </div>
-                        <p className={"font-marbry md:text-4xl p-4 text-center max-w-2xl"}>Suspendisse potenti. Quisque
+                        <p className={"font-marbry md:text-2xl p-4 text-center max-w-xl"}>Suspendisse potenti. Quisque
                             vel
                             molestie felis,
                             eget viverra velit
                             Mauris ac pretium purus, ac convallis lectus. Donec ut elit magna. Vestibulum turpis turpis.
                         </p>
                     </div>
-                    <div className={"flex max-md:flex-col gap-6 items-center"}>
-                        <p className={"font-marbry md:text-4xl p-4 text-center max-w-2xl"}>Suspendisse potenti. Quisque
+                    <div className={"flex max-md:flex-col gap-8 md:gap-20 items-center"}>
+                        <p className={"font-marbry md:text-2xl p-4 text-center max-w-xl"}>Suspendisse potenti. Quisque
                             vel
                             molestie felis,
                             eget viverra velit
                             Mauris ac pretium purus, ac convallis lectus. Donec ut elit magna. Vestibulum turpis turpis.
                         </p>
-                        <img className={"aspect-square max-w-lg object-cover w-full mb-8"}
-                             src="https://picsum.photos/1800/1100" alt="random"/>
+                        <div className={"overflow-hidden w-full h-full aspect-square"}>
+                            <img
+                                className={"aspect-square max-w-lg object-cover md:hover:scale-100 scale-110 transition-transform duration-500 w-full h-full mb-8"}
+                                src="https://picsum.photos/1800/1100" alt="random"/>
+                        </div>
                     </div>
                 </div>
-                <Index/>
                 <BottomPreview id={params.id}/>
             </div>
         </section>

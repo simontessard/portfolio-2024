@@ -41,7 +41,7 @@ export default function About(){
     return (
         <section className="js-section_about bg-white py-16 md:py-24">
             <div className={"container flex flex-col max-md:px-4"}>
-                <BigTitle title="à propos" color={"black"}/>
+                <BigTitle title="à_propos" color={"black"}/>
                 <div className={"self-end mb-12"}>
                     <GithubButton/>
                 </div>

@@ -3,6 +3,7 @@ import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ScrollDownButton from "@/app/components/Buttons/ScrollDownButton";
+import {BigTitle} from "@/app/components/BigTitle";
 
 // https://www.youtube.com/watch?v=PeFqGrEHnp0&ab_channel=IvanSmiths
 function ScrollSection() {
@@ -53,16 +54,20 @@ function ScrollSection() {
         <section className="overflow-hidden text-white text-6xl">
             {/* The section up act just as a wrapper. If the trigger (below) is the
                 first jsx element in the component, you get an error on route change */}
-
             {/* The div below act just as a trigger. As the doc suggests, the trigger and
                 the animation should alway be two separated refs */}
             <div ref={triggerRef} className={"relative"}>
+                <div className={"absolute top-12 w-full"}>
+                    <div className={"container max-md:w-full max-md:flex max-md:justify-center"}>
+                        <BigTitle title="Skills"/>
+                    </div>
+                </div>
                 <div ref={instruction} className={"absolute text-sm uppercase flex justify-center w-full bottom-20 overflow-hidden"}>
                     <div ref={scrollDownButton}>
                         <ScrollDownButton/>
                     </div>
                 </div>
-                <div ref={sectionRef} className="h-dvh w-[400vw] flex relative">
+                <div ref={sectionRef} className="h-dvh w-[400vw] flex relative md:mt-12">
                     {skills.map((skill, index) => (
                         <div key={index} className="h-dvh w-dvw flex justify-center items-center">
                             <a href="#"
