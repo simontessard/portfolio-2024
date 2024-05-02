@@ -1,5 +1,4 @@
 "use client";
-import {BigTitle} from "@/app/components/BigTitle";
 import ScrollSection from "@/app/pages/home/sections/ScrollSection";
 
 export function Skills() {
