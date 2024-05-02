@@ -23,17 +23,40 @@ function AnimatedText({children}) {
 
     useLayoutEffect( () => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.to(text.current, {
-            scrollTrigger: {
-                trigger: text.current,
-                scrub: true,
-                start: "bottom bottom",
-                end: "+=400px bottom",
-            },
-            opacity: 1,
-            left: "200px",
-            ease: "power3.Out"
-        })
+
+        let mm = gsap.matchMedia();
+
+        // Desktop setup
+        mm.add("(min-width: 800px)", () => {
+            gsap.to(text.current, {
+                scrollTrigger: {
+                    trigger: text.current,
+                    scrub: true,
+                    start: "bottom bottom",
+                    end: "+=400px bottom",
+                },
+                opacity: 1,
+                left: "200px",
+                ease: "power3.Out"
+            });
+        });
+
+        // Mobile setup
+        mm.add("(max-width: 799px)", () => {
+            gsap.to(text.current, {
+                scrollTrigger: {
+                    trigger: text.current,
+                    scrub: true,
+                    start: "bottom bottom",
+                    end: "+=400px bottom",
+                },
+                opacity: 1,
+                left: "50px",
+                ease: "power3.Out"
+            });
+        });
+
+
     }, [])
 
     return <p className={"relative opacity-0"} ref={text}>{children}</p>

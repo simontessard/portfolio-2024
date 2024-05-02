@@ -42,9 +42,9 @@ export default function ProjectPage() {
                             <span className={"font-bold text-black rounded"}>ID : {params.id}</span>
                             <Button text={"SEE LIVE APP"} href={"/"}/>
                         </div>
-                        <ul className={"flex gap-8 w-full text-white md:text-4xl font-marbry"}>
-                            <li className={"bg-black w-fit px-6 pt-4 pb-3.5"}>Angular</li>
-                            <li className={"bg-black w-fit px-6 pt-4 pb-3.5"}>Tailwind</li>
+                        <ul className={"flex gap-8 w-full text-white md:text-2xl font-marbry"}>
+                            <li className={"bg-black w-fit px-8 pt-5 pb-4"}>Angular</li>
+                            <li className={"bg-black w-fit px-8 pt-5 pb-4"}>Tailwind</li>
                         </ul>
                     </div>
                 </div>
@@ -53,10 +53,11 @@ export default function ProjectPage() {
                     <div className={"mt-20 flex max-md:flex-col gap-8 md:gap-20 items-center md:mb-40"}>
                         <div className={"overflow-hidden w-full h-full aspect-square"}>
                             <img
-                                className={"aspect-square max-w-lg object-cover md:hover:scale-100 scale-110 transition-transform duration-500 w-full h-full mb-8"}
+                                className={"aspect-square max-md:mx-auto max-w-xs h-auto md:max-w-lg object-cover md:hover:scale-100 scale-110 " +
+                                    "transition-transform duration-500 w-full mb-8"}
                                 src="https://picsum.photos/1900/1100" alt="random"/>
                         </div>
-                        <p className={"font-marbry md:text-2xl p-4 text-center max-w-xl"}>Suspendisse potenti. Quisque
+                        <p className={"font-marbry md:text-2xl p-4 max-w-xl"}>Suspendisse potenti. Quisque
                             vel
                             molestie felis,
                             eget viverra velit
@@ -64,7 +65,7 @@ export default function ProjectPage() {
                         </p>
                     </div>
                     <div className={"flex max-md:flex-col gap-8 md:gap-20 items-center"}>
-                        <p className={"font-marbry md:text-2xl p-4 text-center max-w-xl"}>Suspendisse potenti. Quisque
+                        <p className={"font-marbry md:text-2xl p-4 md:text-right max-w-xl"}>Suspendisse potenti. Quisque
                             vel
                             molestie felis,
                             eget viverra velit
@@ -72,7 +73,7 @@ export default function ProjectPage() {
                         </p>
                         <div className={"overflow-hidden w-full h-full aspect-square"}>
                             <img
-                                className={"aspect-square max-w-lg object-cover md:hover:scale-100 scale-110 transition-transform duration-500 w-full h-full mb-8"}
+                                className={"aspect-square max-md:mx-auto max-w-xs h-auto md:max-w-lg object-cover md:hover:scale-100 scale-110 transition-transform duration-500 w-full mb-8"}
                                 src="https://picsum.photos/1800/1100" alt="random"/>
                         </div>
                     </div>

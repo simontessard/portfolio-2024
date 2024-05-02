@@ -4,6 +4,7 @@ import GithubButton from "@/app/components/Buttons/GithubButton";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useLayoutEffect, useRef} from "react";
+import DownloadButton from "@/app/components/Buttons/DownloadButton";
 
 export default function About(){
     const text = useRef(null);
@@ -41,7 +42,7 @@ export default function About(){
     return (
         <section className="js-section_about bg-white py-16 md:py-24">
             <div className={"container flex flex-col max-md:px-4"}>
-                <BigTitle title="à_propos" color={"black"}/>
+                <BigTitle title="à propos" color={"black"} multipleWords={true}/>
                 <div className={"self-end mb-12"}>
                     <GithubButton/>
                 </div>
@@ -52,6 +53,11 @@ export default function About(){
                     Lorem ipsum dolor sit amet consectetur. Eget at sodales suspendisse
                     integer. Aliquam viverra purus gravida lectus tincidunt ridiculus elementum ut.
                 </p>
+            </div>
+            <div className={"container flex flex-col max-md:px-4"}>
+                <div className={"self-end mb-12"}>
+                    <DownloadButton/>
+                </div>
             </div>
         </section>
     )
