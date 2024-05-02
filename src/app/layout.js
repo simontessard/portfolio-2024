@@ -3,7 +3,7 @@ import SmoothScrolling from "@/app/utils/SmoothScrolling";
 import {Footer} from "@/app/partials/Footer";
 
 export const metadata = {
-  title: "Simon Portfolio",
+  title: "S - Portfolio",
   description: "My personal portfolio",
 };
 
