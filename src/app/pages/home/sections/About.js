@@ -47,7 +47,7 @@ export default function About(){
                     <GithubButton/>
                 </div>
             </div>
-            <div className="relative bg-white md:py-20 flex items-center justify-between">
+            <div className="relative bg-white md:py-20 flex items-center justify-between max-md:mb-10">
                 <div ref={square} className="size-72 md:size-[34rem] bg-black"></div>
                 <p ref={text} className="absolute max-w-2xl md:ml-12 p-8 text-white md:text-3xl mix-blend-difference">
                     Lorem ipsum dolor sit amet consectetur. Eget at sodales suspendisse
@@ -55,7 +55,7 @@ export default function About(){
                 </p>
             </div>
             <div className={"container flex flex-col max-md:px-4"}>
-                <div className={"self-end mb-12"}>
+                <div className={"self-center md:self-end mb-12"}>
                     <DownloadButton/>
                 </div>
             </div>

@@ -96,9 +96,9 @@ export function ProjectsBis() {
                     <div className="desktopPhotos max-md:hidden relative w-[40vw] h-[40vw] overflow-hidden">
                         {projects.map((project, index) => (
                             <div className={`desktopPhoto absolute flex flex-col p-8 w-full h-full ${project.color}`}>
-                                <span className="font-marbry font-light text-5xl self-end">↗</span>
                             </div>
                         ))}
+                        <span className="absolute right-8 top-8 font-marbry font-light text-5xl self-end">↗</span>
                     </div>
                 </div>
             </div>
