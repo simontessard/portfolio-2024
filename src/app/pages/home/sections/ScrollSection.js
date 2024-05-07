@@ -48,7 +48,22 @@ function ScrollSection() {
         };
     }, []);
 
-    const skills = ['Front-end', 'Back-end', 'Full-stack', 'DevOps'];
+    const skills = [
+        {
+            title: 'Front-end',
+            color : 'bg-blue-800'
+        },
+        {
+            title: 'Back-end',
+            color : 'bg-green-800'
+        },
+        {
+            title: 'Full-stack',
+
+        },
+        {
+            title: 'DevOps',
+        }];
 
     return (
         <section className="overflow-hidden text-white text-6xl">
@@ -71,7 +86,7 @@ function ScrollSection() {
                     {skills.map((skill, index) => (
                         <div key={index} className="h-dvh w-dvw flex justify-center items-center">
                             <a href="#"
-                               className="relative h-[30dvh] md:h-[40dvh] flex flex-col justify-between p-4 md:p-8 w-[80vw] md:w-[60vw] bg-purple-500">
+                                className={`relative h-[30dvh] md:h-[40dvh] flex flex-col justify-between p-4 md:p-8 w-[80vw] md:w-[60vw] ${skill.color ? skill.color : 'bg-purple-500'}`}>
                                 <div className="self-end">
                                     <svg className={"size-16 md:size-20"} viewBox="0 0 138 138" fill="none">
                                         <path fillRule="evenodd" fill="#1C1C1C"
@@ -80,8 +95,8 @@ function ScrollSection() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 className="text-sm md:text-4xl mb-2">{skill}</h3>
-                                    <p className={"max-md:text-sm"}>{skill}</p>
+                                    <h3 className="text-xl md:text-5xl mb-2">{skill.title}</h3>
+                                    <p className={"text-sm md:text-2xl"}>HTML - CSS - Javascript</p>
                                 </div>
                             </a>
                         </div>

@@ -8,6 +8,7 @@ export const projects = [
     "explication2": "L'utilisateur a accès à son profil, il peut visualiser ses comptes bancaires et plus tard il pourra voir les transactions qui y sont associés. Il peut aussi modifier ses informations personnelles.",
     "explication3": "Pendant que l'application est toujours en phase de conception, la banque souhaite avoir des propositions d'API proposées pour les transactions. Il est demandé de fournir un document décrivant les API proposées pour les transactions, en suivant les directives de Swagger. Le document doit contenir des informations telles que la méthode HTTP, la route, la description de ce à quoi correspond l'endpoint, les paramètres possibles et les différentes réponses avec les codes de réponse correspondants.",
     "github": "https://github.com/simontessard/ArgentBank-OCR",
+    "cover": "https://picsum.photos/1900/2000",
     "technologies": [
       "React",
       "Redux",
@@ -31,6 +32,7 @@ export const projects = [
     "explication2": "Explication 2 du projet fictif",
     "explication3": "Explication 3 du projet fictif",
     "github": "https://github.com/simontessard/FictiveProject",
+    "cover": "https://picsum.photos/2000/2000",
     "technologies": [
       "React",
       "Redux",
@@ -55,6 +57,7 @@ export const projects = [
     "explication2": "Explication 2 du projet fictif",
     "explication3": "Explication 3 du projet fictif",
     "github": "https://github.com/simontessard/FictiveProject",
+    "cover": "https://picsum.photos/2000/1900",
     "technologies": [
       "Angular",
       "Spring Boot",
@@ -78,6 +81,7 @@ export const projects = [
         "explication2": "Explication 2 du projet fictif",
         "explication3": "Explication 3 du projet fictif",
         "github": "",
+        "cover": "https://picsum.photos/1800/1900",
         "technologies": [
         "Angular",
         "Spring Boot",

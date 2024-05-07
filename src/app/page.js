@@ -5,7 +5,6 @@ import { Skills } from "@/app/pages/home/sections/Skills";
 import About from "@/app/pages/home/sections/About";
 import TechList from "@/app/utils/TechList";
 import { MediumTitle } from "@/app/components/MediumTitle";
-import {ProjectsBis} from "@/app/pages/home/sections/ProjectsBis";
 
 export default function Home() {
   return (

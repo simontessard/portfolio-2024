@@ -49,7 +49,7 @@ export default function About(){
             </div>
             <div className="relative bg-white md:py-20 flex items-center justify-between max-md:mb-10">
                 <div ref={square} className="size-72 md:size-[34rem] bg-black"></div>
-                <p ref={text} className="absolute max-w-2xl md:ml-12 p-8 text-white md:text-3xl mix-blend-difference">
+                <p ref={text} className="absolute max-w-2xl md:max-w-5xl md:ml-12 p-8 text-white md:text-5xl mix-blend-difference">
                     Lorem ipsum dolor sit amet consectetur. Eget at sodales suspendisse
                     integer. Aliquam viverra purus gravida lectus tincidunt ridiculus elementum ut.
                 </p>

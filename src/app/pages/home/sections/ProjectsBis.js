@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { projects } from "@/app/data/data";
 import {Project} from "@/app/pages/home/cards/Project";
+import Link from "next/link";
 
 export function ProjectsBis() {
     gsap.registerPlugin(ScrollTrigger);
@@ -58,7 +59,7 @@ export function ProjectsBis() {
                 <div className="left md:w-1/2">
                     <div className="desktopContent max-md:hidden mr-auto w-4/5 text-white">
                         {projects.map((project, index) => (
-                            <div className="desktopContentSection min-h-dvh flex flex-col justify-center">
+                            <Link href={`/project/${project.id}`} className="desktopContentSection min-h-dvh flex flex-col justify-center">
                                 <h1 className={"md:text-6xl mb-4"}>{project.title}</h1>
                                 <p className={"md:text-lg md:mb-20"}>Red is a color often associated with strong emotions such as
                                     passion, love, and
@@ -72,7 +73,7 @@ export function ProjectsBis() {
                                               className="w-fit bg-white text-black text-xs pt-2.5 pb-1.5 px-3">{tagItem}</span>
                                     ))}
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -95,8 +96,9 @@ export function ProjectsBis() {
 
                     <div className="desktopPhotos max-md:hidden relative w-[40vw] h-[40vw] overflow-hidden">
                         {projects.map((project, index) => (
-                            <div className={`desktopPhoto absolute flex flex-col p-8 w-full h-full ${project.color}`}>
-                            </div>
+                            <Link href={`/project/${project.id}`} className={`desktopPhoto absolute flex flex-col w-full h-full ${project.color}`}>
+                                <img className={"w-full h-full object-cover"} src={project.cover} alt={project.title}/>
+                            </Link>
                         ))}
                         <span className="absolute right-8 top-8 font-marbry font-light text-5xl self-end">↗</span>
                     </div>
