@@ -37,18 +37,18 @@ export default function ProjectPage() {
             <ProjectHeader/>
             <div ref={section} className={"flex flex-col gap-12 mt-20 items-center w-full z-10"}>
                 <div className={"bg-white w-full px-4 mb-32"}>
-                    <div className={"container flex flex-col items-center justify-between text-black py-8"}>
-                        <div className={"flex justify-between w-full mb-8"}>
-                            <span className={"font-bold text-black rounded"}>ID : {params.id}</span>
+                    <div className={"container flex flex-col items-center justify-between text-black p-8"}>
+                        <div className={"flex justify-end w-full mb-8"}>
                             <Button text={"SEE LIVE APP"} href={"/"}/>
                         </div>
-                        <ul className={"flex gap-8 w-full text-white md:text-2xl font-marbry"}>
-                            <li className={"bg-black w-fit px-8 pt-5 pb-4"}>Angular</li>
-                            <li className={"bg-black w-fit px-8 pt-5 pb-4"}>Tailwind</li>
+                        <ul className={"flex justify-center gap-4 md:gap-8 w-full text-white md:text-2xl font-marbry"}>
+                            <li className={"bg-black w-fit px-3 md:px-6 pt-2 md:pt-4 pb-2 md:pb-3"}>Angular</li>
+                            <li className={"bg-black w-fit px-3 md:px-6 pt-2 md:pt-4 pb-2 md:pb-3"}>Tailwind</li>
+                            <li className={"bg-black w-fit px-3 md:px-6 pt-2 md:pt-4 pb-2 md:pb-3"}>Javascript</li>
                         </ul>
                     </div>
                 </div>
-                <div ref={contentSection}>
+                <div ref={contentSection} className={"py-16 md:py-30"}>
                     <Index/>
                     <div className={"mt-20 flex max-md:flex-col gap-8 md:gap-20 items-center md:mb-40"}>
                         <div className={"overflow-hidden w-full h-full aspect-square"}>

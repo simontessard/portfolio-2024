@@ -57,25 +57,33 @@ export function ProjectsBis() {
         <section className={"w-full"}>
             <div className="gallery flex">
                 <div className="left md:w-1/2">
-                    <div className="desktopContent max-md:hidden mr-auto w-4/5 text-white">
+                    <ul className="desktopContent max-md:hidden mr-auto w-4/5 text-white">
                         {projects.map((project, index) => (
-                            <Link href={`/project/${project.id}`} className="desktopContentSection min-h-dvh flex flex-col justify-center">
+                            <li className="desktopContentSection min-h-dvh flex flex-col justify-center">
                                 <h1 className={"md:text-6xl mb-4"}>{project.title}</h1>
+                                <p className={"mb-4"}>2024</p>
                                 <p className={"md:text-lg md:mb-20"}>Red is a color often associated with strong emotions such as
                                     passion, love, and
                                     anger.
                                     It's a bold and attention-grabbing color that can evoke feelings of excitement,
                                     warmth,
                                     and energy.</p>
-                                <div className="flex gap-4">
-                                    {project.technologies.map((tagItem, index) => (
-                                        <span key={index}
-                                              className="w-fit bg-white text-black text-xs pt-2.5 pb-1.5 px-3">{tagItem}</span>
-                                    ))}
+                                <div className={"flex justify-between items-end gap-4"}>
+                                    <div className="flex gap-4">
+                                        {project.technologies.map((tagItem, index) => (
+                                            <span key={index}
+                                                  className="w-fit bg-white text-black text-xs pt-2.5 pb-1.5 px-3">{tagItem}</span>
+                                        ))}
+                                    </div>
+                                    <Link href={`/project/${project.id}`}
+                                          className={"bg-white leading-none pt-4 pb-3 px-4 text-black uppercase"}>
+                                        Voir plus
+                                        <span className="ml-2 text-xl md:text-xl font-marbry">↗</span>
+                                    </Link>
                                 </div>
-                            </Link>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
                 </div>
 
                 <div className="right md:h-dvh md:w-1/2 flex flex-col justify-center">
