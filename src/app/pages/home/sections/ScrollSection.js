@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import ScrollDownButton from "@/app/components/Buttons/ScrollDownButton";
 import {BigTitle} from "@/app/components/BigTitle";
+import {skills} from "@/app/data/skills";
 
 // https://www.youtube.com/watch?v=PeFqGrEHnp0&ab_channel=IvanSmiths
 function ScrollSection() {
@@ -48,23 +49,6 @@ function ScrollSection() {
         };
     }, []);
 
-    const skills = [
-        {
-            title: 'Front-end',
-            color : 'bg-blue-800'
-        },
-        {
-            title: 'Back-end',
-            color : 'bg-green-800'
-        },
-        {
-            title: 'Full-stack',
-
-        },
-        {
-            title: 'DevOps',
-        }];
-
     return (
         <section className="overflow-hidden text-white text-6xl">
             {/* The section up act just as a wrapper. If the trigger (below) is the
@@ -96,7 +80,7 @@ function ScrollSection() {
                                 </div>
                                 <div>
                                     <h3 className="text-xl md:text-5xl mb-2">{skill.title}</h3>
-                                    <p className={"text-sm md:text-2xl"}>HTML - CSS - Javascript</p>
+                                    <p className={"text-sm md:text-2xl"}>{skill.description}</p>
                                 </div>
                             </a>
                         </div>

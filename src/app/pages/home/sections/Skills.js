@@ -6,6 +6,5 @@ export function Skills() {
       <section className={"py-16 md:py-24"}>
             <ScrollSection/>
       </section>
-
   );
 }
