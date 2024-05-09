@@ -8,7 +8,7 @@ const phrases = ["Los Flamencos National Reserve", "is a nature reserve located"
 export default function Index() {
 
     return (
-        <div className={"relative max-md:overflow-hidden text-white md:text-3xl uppercase my-6"} >
+        <div className={"relative max-md:overflow-hidden text-white md:text-3xl uppercase mt-6 mb-20 md:mb-32"} >
             {
                 phrases.map( (phrase, index) => {
                     return <AnimatedText key={index}>{phrase}</AnimatedText>

@@ -4,10 +4,10 @@ import Template from "@/app/utils/PageTransition";
 import {useLayoutEffect, useRef} from "react";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
-import {Button} from "@/app/components/Buttons/Button";
 import BottomPreview from "@/app/project/BottomPreview";
 import Index from "@/app/project/Description";
 import ProjectHeader from "@/app/project/ProjectHeader";
+import {Overview} from "@/app/project/Overview";
 
 export default function ProjectPage() {
     const params = useParams();
@@ -36,18 +36,7 @@ export default function ProjectPage() {
             <Template/>
             <ProjectHeader/>
             <div ref={section} className={"flex flex-col gap-12 mt-20 items-center w-full z-10"}>
-                <div className={"bg-white w-full px-4 mb-32"}>
-                    <div className={"container flex flex-col items-center justify-between text-black p-8"}>
-                        <div className={"flex justify-end w-full mb-8"}>
-                            <Button text={"SEE LIVE APP"} href={"/"}/>
-                        </div>
-                        <ul className={"flex justify-center gap-4 md:gap-8 w-full text-white md:text-2xl font-marbry"}>
-                            <li className={"bg-black w-fit px-3 md:px-6 pt-2 md:pt-4 pb-2 md:pb-3"}>Angular</li>
-                            <li className={"bg-black w-fit px-3 md:px-6 pt-2 md:pt-4 pb-2 md:pb-3"}>Tailwind</li>
-                            <li className={"bg-black w-fit px-3 md:px-6 pt-2 md:pt-4 pb-2 md:pb-3"}>Javascript</li>
-                        </ul>
-                    </div>
-                </div>
+                <Overview/>
                 <div ref={contentSection} className={"py-16 md:py-30"}>
                     <Index/>
                     <div className={"mt-20 flex max-md:flex-col gap-8 md:gap-20 items-center md:mb-40"}>

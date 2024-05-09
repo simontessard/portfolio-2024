@@ -47,11 +47,17 @@ export default function ProjectHeader(){
     return (
         <div className={"relative h-screen w-full"}>
             <Link ref={goBackButton} href={"/"}
-                  className={"opacity-0 bg-black pt-2 pb-1.5 px-3 absolute z-10 top-64 left-20"}>← Retour</Link>
-            <Image className={"w-full h-full object-cover"} ref={backgroundImg} src={image1} alt={"random"}/>
+                  className={"opacity-0 bg-black pt-2 pb-1.5 px-3 absolute z-10 top-64 left-20"}>
+                ← Retour
+            </Link>
+            <div ref={backgroundImg} className="relative w-full h-full overflow-hidden">
+                <Image className={"w-full h-full object-cover"} src={image1} alt={"random"}/>
+                <div className={"absolute top-0 left-0 w-full h-full bg-black/40"}></div>
+            </div>
             <div className={"absolute z-0 flex flex-col items-center justify-center top-0 h-full w-full "}>
                 <h1 ref={title} className={"opacity-0 p-4 font-bold font-marbry text-4xl md:text-8xl mb-4"}>
-                    Project Page </h1>
+                    Project Page
+                </h1>
             </div>
             <div ref={scrollButton} className={"absolute bottom-20 flex w-full justify-center"}>
                 <ScrollDownButton/>
