@@ -43,7 +43,7 @@ export function Loader() {
     });
 
     return (
-        <div ref={container} className="fixed top-0 left-0 w-screen h-screen bg-black z-50 flex justify-center items-center">
+        <div ref={container} className="fixed top-0 left-0 w-screen h-dvh bg-black z-50 flex justify-center items-center">
             <div className="overflow-hidden">
                     <Image
                         ref={loader}

@@ -16,6 +16,12 @@ function ScrollSection() {
     gsap.registerPlugin(ScrollTrigger);
 
     useLayoutEffect(() => {
+        const tl = gsap.timeline({paused: true});
+        tl.to(scrollDownButton.current, {
+            duration: 1,
+            y : 50
+        });
+
         const pin = gsap.fromTo(
             sectionRef.current,
             {
@@ -37,11 +43,6 @@ function ScrollSection() {
                 }
             }
         );
-        const tl = gsap.timeline({paused: true});
-        tl.to(scrollDownButton.current, {
-            duration: 1,
-            y : 50
-        });
 
         return () => {
             {/* A return function for killing the animation on component unmount */ }
