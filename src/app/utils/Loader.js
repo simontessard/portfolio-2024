@@ -47,7 +47,7 @@ export function Loader() {
             <div className="overflow-hidden">
                     <Image
                         ref={loader}
-                        className={"relative size-16 z-10"}
+                        className={"relative size-8 md:size-16 z-10"}
                         src={Logo}
                         alt="Picture of the author"
                     />

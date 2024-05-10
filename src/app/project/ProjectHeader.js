@@ -47,7 +47,7 @@ export default function ProjectHeader(){
     return (
         <div className={"relative h-screen w-full"}>
             <Link ref={goBackButton} href={"/"}
-                  className={"opacity-0 bg-black pt-2 pb-1.5 px-3 absolute z-10 top-64 left-20"}>
+                  className={"opacity-0 bg-black pt-2 pb-1.5 px-3 absolute z-10 top-64 left-4 md:left-20"}>
                 ← Retour
             </Link>
             <div ref={backgroundImg} className="relative w-full h-full overflow-hidden">
@@ -59,7 +59,7 @@ export default function ProjectHeader(){
                     Project Page
                 </h1>
             </div>
-            <div ref={scrollButton} className={"absolute bottom-20 flex w-full justify-center"}>
+            <div ref={scrollButton} className={"absolute bottom-32 md:bottom-20 flex w-full justify-center"}>
                 <ScrollDownButton/>
             </div>
         </div>

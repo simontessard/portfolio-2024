@@ -2,9 +2,9 @@ import {Button} from "@/app/components/Buttons/Button";
 
 export function Overview() {
     return (
-        <div className={"bg-white w-full px-4 mb-32"}>
+        <div className={"bg-white w-full px-4 mb-12 md:mb-32"}>
             <div className={"container flex flex-col items-center justify-between text-black p-8"}>
-                <div className={"flex justify-between w-full mb-8"}>
+                <div className={"flex justify-between w-full max-md:text-sm mb-8"}>
                     <Button text={"CODE"} href={"/"}/>
                     <Button text={"LIVE APP"} href={"/"}/>
                 </div>

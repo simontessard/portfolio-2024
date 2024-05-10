@@ -2,7 +2,7 @@ import ScrollDownButton from "@/app/components/Buttons/ScrollDownButton";
 
 export function HeroHeader() {
   return (
-          <div className="js-hero_header relative bg-black flex max-md:py-20 py-12 text-white h-screen md:h-dvh">
+          <div className="js-hero_header relative bg-black flex pb-32 pt-20 md:py-12 text-white h-screen md:h-dvh">
             <div className="container z-10 flex max-lg:flex-col items-center justify-between mx-auto w-full">
               <div className="flex flex-col justify-center max-md:text-center">
                   <h1 className="flex flex-col font-sans font-bold text-6xl md:text-9xl uppercase mb-4 md:mb-16">
