@@ -39,11 +39,11 @@ export default function ProjectPage() {
                 <Overview/>
                 <div ref={contentSection} className={"py-16 md:py-30"}>
                     <Index/>
-                    <div className={"mt-20 flex max-md:flex-col gap-8 md:gap-20 items-center md:mb-40"}>
-                        <div className={"overflow-hidden w-full h-full aspect-square"}>
+                    <div className={"flex max-md:flex-col gap-8 md:gap-20 items-center mt-20 md:mb-40"}>
+                        <div className={"overflow-hidden w-full h-full md:aspect-square"}>
                             <img
-                                className={"aspect-square max-md:mx-auto max-w-xs h-auto md:max-w-lg object-cover md:hover:scale-100 scale-110 " +
-                                    "transition-transform duration-500 w-full mb-8"}
+                                className={"md:aspect-square max-md:mx-auto h-auto md:max-w-lg object-cover md:hover:scale-100 scale-110 " +
+                                    "transition-transform delay-75 duration-500 w-full mb-8"}
                                 src="https://picsum.photos/1900/1100" alt="random"/>
                         </div>
                         <p className={"font-marbry md:text-2xl p-4 max-w-xl"}>Suspendisse potenti. Quisque
@@ -60,9 +60,9 @@ export default function ProjectPage() {
                             eget viverra velit
                             Mauris ac pretium purus, ac convallis lectus. Donec ut elit magna. Vestibulum turpis turpis.
                         </p>
-                        <div className={"overflow-hidden w-full h-full aspect-square"}>
+                        <div className={"overflow-hidden w-full h-full md:aspect-square"}>
                             <img
-                                className={"aspect-square max-md:mx-auto max-w-xs h-auto md:max-w-lg object-cover md:hover:scale-100 scale-110 transition-transform duration-500 w-full mb-8"}
+                                className={"md:aspect-square max-md:mx-auto h-auto md:max-w-lg object-cover md:hover:scale-100 scale-110 transition-transform delay-75 duration-500 w-full mb-8"}
                                 src="https://picsum.photos/1800/1100" alt="random"/>
                         </div>
                     </div>

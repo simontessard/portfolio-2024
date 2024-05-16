@@ -27,7 +27,7 @@ export function ScrollToTop() {
     }, []);
     return (
         <div className="scrollToTop fixed opacity-0 z-20 bottom-3 md:bottom-6 left-3 md:left-6 p-2 bg-black border border-white text-white">
-            <button className="size-6" onClick={handleClick}>↑</button>
+            <button className="size-6 md:size-8 font-marbry text-xl" onClick={handleClick}>↑</button>
         </div>
     );
 }

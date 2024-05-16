@@ -19,7 +19,7 @@ export function WorkWithMe() {
                     start: "top 50%",
                     scrub: 1,
                 },
-                y: -200,
+                y: -75,
             });
         });
     }, []);

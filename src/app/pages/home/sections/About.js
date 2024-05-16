@@ -22,7 +22,7 @@ export default function About(){
                     start: "bottom bottom",
                     scrub: 1,
                 },
-                y: -100,
+                y: -50,
             });
         });
 
@@ -34,7 +34,7 @@ export default function About(){
                     start: "bottom bottom",
                     scrub: 1,
                 },
-                y: -30,
+                y: -25,
             });
         });
 

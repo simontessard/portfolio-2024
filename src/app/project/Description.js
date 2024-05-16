@@ -28,7 +28,10 @@ function AnimatedText({children}) {
 
         // Desktop setup
         mm.add("(min-width: 800px)", () => {
-            gsap.to(text.current, {
+            gsap.fromTo(text.current, {
+                    left: "-10rem",
+            },
+            {
                 scrollTrigger: {
                     trigger: text.current,
                     scrub: true,
@@ -36,7 +39,7 @@ function AnimatedText({children}) {
                     end: "+=400px bottom",
                 },
                 opacity: 1,
-                left: "200px",
+                left: "0",
                 ease: "power3.Out"
             });
         });
@@ -51,7 +54,7 @@ function AnimatedText({children}) {
                     end: "+=400px bottom",
                 },
                 opacity: 1,
-                left: "50px",
+                left: "1rem",
                 ease: "power3.Out"
             });
         });
