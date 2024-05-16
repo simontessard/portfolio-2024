@@ -50,7 +50,7 @@ const TechList = () => {
     }, []);
 
     return (
-        <section className="wrapper overflow-hidden" ref={component}>
+        <section className="wrapper overflow-hidden mb-8 md:mb-20" ref={component}>
             {slice.items.map(({ tech_color, tech_name }, index) => (
                 <div key={index} className="tech-row mb-8 flex items-center justify-center gap-4 md:gap-6 font-marbry text-slate-700"
                     aria-label={tech_name || ""}>

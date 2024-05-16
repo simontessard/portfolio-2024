@@ -3,7 +3,7 @@ import {Project} from "@/app/pages/home/cards/Project";
 
 export default function ProjectsMobileDisplay() {
     return (
-        <div className="md:hidden grid gap-6">
+        <div className="md:hidden grid gap-8">
             {projects.map((project, index) => (
                 <Project
                     key={index}

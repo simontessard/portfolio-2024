@@ -54,7 +54,7 @@ export default function ProjectHeader({text}){
                 <div className={"absolute top-0 left-0 w-full h-full bg-black/40"}></div>
             </div>
             <div className={"absolute z-0 flex flex-col items-center justify-center top-0 h-full w-full "}>
-                <h1 ref={title} className={"opacity-0 p-4 font-bold font-marbry text-4xl md:text-8xl mb-4"}>
+                <h1 ref={title} className={"opacity-0 p-4 font-bold font-marbry text-5xl md:text-9xl mb-4"}>
                     {text}
                 </h1>
             </div>
