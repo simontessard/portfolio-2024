@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ScrollDownButton from "@/app/components/Buttons/ScrollDownButton";
 import {useLayoutEffect, useRef} from "react";
 import {gsap} from "gsap";
@@ -7,7 +6,7 @@ import image1 from "@/app/assets/img/placeholder.jpg"
 import Image from "next/image";
 import GoBackButton from "@/app/components/Buttons/GoBackButton";
 
-export default function ProjectHeader(){
+export default function ProjectHeader({text}){
     const backgroundImg = useRef(null);
     const title = useRef(null);
     const goBackButton = useRef(null);
@@ -56,7 +55,7 @@ export default function ProjectHeader(){
             </div>
             <div className={"absolute z-0 flex flex-col items-center justify-center top-0 h-full w-full "}>
                 <h1 ref={title} className={"opacity-0 p-4 font-bold font-marbry text-4xl md:text-8xl mb-4"}>
-                    Project Page
+                    {text}
                 </h1>
             </div>
             <div ref={scrollButton} className={"absolute bottom-32 md:bottom-20 flex w-full justify-center"}>

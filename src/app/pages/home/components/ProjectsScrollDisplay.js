@@ -3,10 +3,10 @@ import React, { useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { projects } from "@/app/data/data";
-import {Project} from "@/app/pages/home/cards/Project";
 import Link from "next/link";
+import ProjectsMobileDisplay from "@/app/pages/home/components/ProjectsMobileDisplay";
 
-export function ProjectsBis() {
+export function ProjectsScrollDisplay() {
     gsap.registerPlugin(ScrollTrigger);
 
     useLayoutEffect(() => {
@@ -81,27 +81,16 @@ export function ProjectsBis() {
 
                 <div className="right md:h-dvh md:w-1/2 flex flex-col justify-center">
 
-                    <div className="mobileContent md:hidden grid gap-6">
-                        {projects.map((project, index) => (
-                            <Project
-                                key={index}
-                                id={index}
-                                type={index % 3 === 0 ? 'small' : 'large'}
-                                title={project.title}
-                                tag={project.technologies}
-                                color={project.color}
-                                description={project.description}
-                            />
-                        ))}
-                    </div>
+                    <ProjectsMobileDisplay/>
 
-                    <div className="desktopPhotos max-md:hidden relative w-[40vw] h-[40vw] overflow-hidden">
+                    <div className="group max-md:hidden relative w-[40vw] h-[40vw] overflow-hidden">
                         {projects.map((project, index) => (
                             <Link href={`/project/${project.id}`} className={`desktopPhoto absolute flex flex-col w-full h-full ${project.color}`}>
                                 <img className={"w-full h-full object-cover"} src={project.cover} alt={project.title}/>
                             </Link>
                         ))}
-                        <span className="absolute right-8 top-8 font-marbry font-light text-5xl self-end">↗</span>
+                        <span className="absolute right-10 top-10 font-marbry font-light text-5xl self-end
+                        md:group-hover:translate-x-1 md:group-hover:-translate-y-1 transition-transform">↗</span>
                     </div>
                 </div>
             </div>

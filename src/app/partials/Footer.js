@@ -5,7 +5,7 @@ import bg from "@/app/assets/img/about-bg.png";
 export function Footer() {
     return (
         <footer className="bg-black py-6 md:pt-16" style={{backgroundImage: `url(${bg.src})`}}>
-            <div className="container max-md:px-4">
+            <div className="container">
                 <div
                     className="relative flex flex-col gap-4 md:gap-8 md:items-center text-white justify-between mb-8 md:mb-12">
                     <Link href="" className="text-center text-lg md:text-6xl uppercase">

@@ -17,7 +17,7 @@ export default function Home() {
         <HeroHeader />
         <About/>
         <Skills/>
-        <div className={"container max-md:px-4"}>
+        <div className={"container"}>
             <MediumTitle title="Ce que j'utilise le plus :"/>
         </div>
         <TechList />

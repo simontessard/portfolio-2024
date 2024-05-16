@@ -7,7 +7,7 @@ import {BigTitle} from "@/app/components/BigTitle";
 import {skills} from "@/app/data/skills";
 
 // https://www.youtube.com/watch?v=PeFqGrEHnp0&ab_channel=IvanSmiths
-function ScrollSection() {
+function SkillsScrollDisplay() {
     const sectionRef = useRef(null);
     const triggerRef = useRef(null);
     const instruction = useRef(null);
@@ -92,4 +92,4 @@ function ScrollSection() {
     );
 }
 
-export default ScrollSection;
+export default SkillsScrollDisplay;

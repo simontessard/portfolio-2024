@@ -1,6 +1,6 @@
 export const projects = [
   {
-    "id": 1,
+    "id": 0,
     "title": "Argent Bank",
     "color": "bg-green-600",
     "description": "Le projet consiste à créer une application web React avec un système d'authentification pour les utilisateurs de la banque Argent Bank. L'interface est organisée en composants modulables et réutilisables",
@@ -24,7 +24,7 @@ export const projects = [
     "date": 2023
   },
   {
-    "id": 2,
+    "id": 1,
     "title": "Fictive Project",
     "color": "bg-purple-700",
     "description": "Description du projet fictif",
@@ -49,7 +49,7 @@ export const projects = [
     "date": 2024
   },
   {
-    "id": 3,
+    "id": 2,
     "title": "Woota",
     "color": "bg-purple-400",
     "description": "Description du projet fictif",
@@ -71,21 +71,6 @@ export const projects = [
     ],
     "categorie": "Openclassrooms",
     "date": 2024
-  },
-    {
-        "id": 4,
-        "title": "Projet Fictif",
-        "color": "bg-red-700",
-        "description": "Description courte et simple du projet fictif",
-        "explication1": "Explication 1 du projet fictif",
-        "explication2": "Explication 2 du projet fictif",
-        "explication3": "Explication 3 du projet fictif",
-        "github": "",
-        "cover": "https://picsum.photos/1800/1900",
-        "technologies": [
-        "Angular",
-        "Spring Boot",
-        "Java"],
-    }
+  }
 ]
 
