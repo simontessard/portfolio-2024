@@ -22,8 +22,6 @@ export function ProjectsBis() {
 
             mm.add("(min-width: 600px)", () => {
 
-                console.log("desktop")
-
                 ScrollTrigger.create({
                     trigger:".gallery",
                     start:"top top",
@@ -31,9 +29,9 @@ export function ProjectsBis() {
                     pin:".right"
                 })
 
-                //create scrolltrigger for each details section
-                //trigger photo animation when headline of each details section
-                //reaches 80% of window height
+                //  create scrolltrigger for each details section
+                //  trigger photo animation when headline of each details section
+                //  reaches 80% of window height
                 details.forEach((detail, index)=> {
 
                     let headline = detail.querySelector("h1")
@@ -51,7 +49,7 @@ export function ProjectsBis() {
                 })
             });
         });
-        return () => ctx.revert(); // <-- CLEANUP!
+        return () => ctx.revert();
     }, []);
     return (
         <section className={"w-full"}>
@@ -61,13 +59,8 @@ export function ProjectsBis() {
                         {projects.map((project, index) => (
                             <li className="desktopContentSection min-h-dvh flex flex-col justify-center">
                                 <h1 className={"md:text-6xl mb-4"}>{project.title}</h1>
-                                <p className={"mb-4"}>2024</p>
-                                <p className={"md:text-lg md:mb-20"}>Red is a color often associated with strong emotions such as
-                                    passion, love, and
-                                    anger.
-                                    It's a bold and attention-grabbing color that can evoke feelings of excitement,
-                                    warmth,
-                                    and energy.</p>
+                                <p className={"mb-12"}>2024</p>
+                                <p className={"md:text-lg md:mb-20"}>{project.description}</p>
                                 <div className={"flex justify-between items-end gap-4"}>
                                     <div className="flex gap-4">
                                         {project.technologies.map((tagItem, index) => (

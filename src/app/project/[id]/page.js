@@ -39,7 +39,7 @@ export default function ProjectPage() {
                 <Overview/>
                 <div ref={contentSection} className={"py-16 md:py-30"}>
                     <Index/>
-                    <div className={"flex max-md:flex-col gap-8 md:gap-20 items-center mt-20 md:mb-40"}>
+                    <div className={"flex max-md:flex-col gap-8 md:gap-40 items-center mt-20 md:mb-40"}>
                         <div className={"overflow-hidden w-full h-full md:aspect-square"}>
                             <img
                                 className={"md:aspect-square max-md:mx-auto h-auto md:max-w-lg object-cover md:hover:scale-100 scale-110 " +
@@ -53,8 +53,8 @@ export default function ProjectPage() {
                             Mauris ac pretium purus, ac convallis lectus. Donec ut elit magna. Vestibulum turpis turpis.
                         </p>
                     </div>
-                    <div className={"flex max-md:flex-col gap-8 md:gap-20 items-center"}>
-                        <p className={"font-marbry md:text-2xl p-4 md:text-right max-w-xl"}>Suspendisse potenti. Quisque
+                    <div className={"flex max-md:flex-col gap-8 md:gap-40 items-center"}>
+                        <p className={"font-marbry md:text-2xl p-4 max-w-xl"}>Suspendisse potenti. Quisque
                             vel
                             molestie felis,
                             eget viverra velit
