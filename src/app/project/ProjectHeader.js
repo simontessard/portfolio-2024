@@ -5,6 +5,7 @@ import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import image1 from "@/app/assets/img/placeholder.jpg"
 import Image from "next/image";
+import GoBackButton from "@/app/components/Buttons/GoBackButton";
 
 export default function ProjectHeader(){
     const backgroundImg = useRef(null);
@@ -46,10 +47,9 @@ export default function ProjectHeader(){
     })
     return (
         <div className={"relative h-screen w-full"}>
-            <Link ref={goBackButton} href={"/"}
-                  className={"opacity-0 bg-black pt-2 pb-1.5 px-3 absolute z-10 top-64 left-4 md:left-20"}>
-                ← Retour
-            </Link>
+            <div className="opacity-0 absolute z-10 top-64 left-4 md:left-20" ref={goBackButton}>
+                <GoBackButton/>
+            </div>
             <div ref={backgroundImg} className="relative w-full h-full overflow-hidden">
                 <Image className={"w-full h-full object-cover"} src={image1} alt={"random"}/>
                 <div className={"absolute top-0 left-0 w-full h-full bg-black/40"}></div>

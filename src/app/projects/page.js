@@ -5,6 +5,7 @@ import { projects } from "@/app/data/data";
 import {BigTitle} from "@/app/components/BigTitle";
 import Link from "next/link";
 import Template from "@/app/utils/PageTransition";
+import GoBackButton from "@/app/components/Buttons/GoBackButton";
 
 export default function ProjectsPage() {
 
@@ -61,6 +62,7 @@ export default function ProjectsPage() {
         <section className="max-md:px-4 py-16 md:py-24 bg-white text-black">
             <Template/>
             <div className="container flex flex-col mb-6 md:mb-12">
+                <GoBackButton/>
                 <BigTitle title={"Projects"}/>
                 <ul className="z-10 mt-6 md:mt-16">
                     {projects.map((project, index) => (
