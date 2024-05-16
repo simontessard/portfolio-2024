@@ -24,10 +24,9 @@ export function WorkWithMe() {
         });
     }, []);
   return (
-    <section ref={section} className={"bg-white py-16 md:py-24 max-md:mb-8"}>
-        <div className="container text-black">
-            <div className={"max-w-5xl mx-auto"}>
-                <h2 className="text-3xl md:text-8xl font-bold mb-8 md:mb-16">Travaillons ensemble</h2>
+    <section ref={section} className={"bg-white py-16 md:py-28 max-md:mb-8"}>
+        <div className="container mx-auto text-black">
+                <h2 className="text-3xl md:text-8xl font-bold mb-8 md:mb-20 font-marbry">Travaillons ensemble</h2>
                 <p className={"text-sm md:text-xl mb-4 md:mb-6"}>Vous avez un projet sur lequel vous aimeriez que je travaille ? Vous avez besoin de
                     mes compétences pour un projet ?</p>
                 <p className={"text-sm md:text-xl mb-4 md:mb-6"}>Je suis disponible pour des missions freelance ou en CDI.</p>
@@ -35,7 +34,6 @@ export function WorkWithMe() {
                 <div className={"max-md:mx-auto md:ml-auto w-fit"}>
                     <ContactButton href={"#"} text={"Contactez moi"}/>
                 </div>
-            </div>
         </div>
     </section>
   );

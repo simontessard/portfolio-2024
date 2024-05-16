@@ -11,6 +11,7 @@ export function ProjectsScrollDisplay() {
 
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
+            const detailsNoFirstChild = gsap.utils.toArray(".desktopContentSection:not(:first-child)")
             const details = gsap.utils.toArray(".desktopContentSection:not(:first-child)")
             const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)")
 
@@ -20,7 +21,7 @@ export function ProjectsScrollDisplay() {
 
             let mm = gsap.matchMedia();
 
-            mm.add("(min-width: 600px)", () => {
+            mm.add("(min-width: 768px)", () => {
 
                 ScrollTrigger.create({
                     trigger:".gallery",
@@ -32,7 +33,7 @@ export function ProjectsScrollDisplay() {
                 //  create scrolltrigger for each details section
                 //  trigger photo animation when headline of each details section
                 //  reaches 80% of window height
-                details.forEach((detail, index)=> {
+                detailsNoFirstChild.forEach((detail, index)=> {
 
                     let headline = detail.querySelector("h1")
                     let animation = gsap.timeline()
@@ -59,17 +60,17 @@ export function ProjectsScrollDisplay() {
                         {projects.map((project, index) => (
                             <li className="desktopContentSection min-h-dvh flex flex-col justify-center">
                                 <h1 className={"md:text-6xl mb-4"}>{project.title}</h1>
-                                <p className={"mb-12"}>2024</p>
+                                <p className={"mb-12"}>{project.date}</p>
                                 <p className={"md:text-lg md:mb-20"}>{project.description}</p>
                                 <div className={"flex justify-between items-end gap-4"}>
                                     <div className="flex gap-4">
                                         {project.technologies.map((tagItem, index) => (
                                             <span key={index}
-                                                  className="w-fit bg-white text-black text-xs pt-2.5 pb-1.5 px-3">{tagItem}</span>
+                                                  className="w-fit border border-white text-white text-xs pt-2.5 pb-1.5 px-3">{tagItem}</span>
                                         ))}
                                     </div>
                                     <Link href={`/project/${project.id}`}
-                                          className={"bg-white leading-none pt-4 pb-3 px-4 text-black uppercase"}>
+                                          className={"bg-white leading-none pt-2.5 pb-2 px-5 text-black uppercase"}>
                                         Voir plus
                                         <span className="ml-2 text-xl md:text-xl font-marbry">↗</span>
                                     </Link>
@@ -87,6 +88,7 @@ export function ProjectsScrollDisplay() {
                         {projects.map((project, index) => (
                             <Link href={`/project/${project.id}`} className={`desktopPhoto absolute flex flex-col w-full h-full ${project.color}`}>
                                 <img className={"w-full h-full object-cover"} src={project.cover} alt={project.title}/>
+                                <div className="absolute w-full h-full bg-black/15"></div>
                             </Link>
                         ))}
                         <span className="absolute right-10 top-10 font-marbry font-light text-5xl self-end

@@ -71,7 +71,7 @@ function SkillsScrollDisplay() {
                     {skills.map((skill, index) => (
                         <div key={index} className="h-dvh w-dvw flex justify-center items-center">
                             <a href="#"
-                                className={`relative h-[30dvh] md:h-[40dvh] flex flex-col justify-between p-4 md:p-8 w-[80vw] md:w-[60vw] ${skill.color ? skill.color : 'bg-purple-500'}`}>
+                                className={`relative h-[30dvh] md:h-[40dvh] flex flex-col justify-between p-4 md:p-8 w-[86vw] md:w-[60vw] ${skill.color ? skill.color : 'bg-purple-500'}`}>
                                 <div className="self-end">
                                     <svg className={"size-16 md:size-20"} viewBox="0 0 138 138" fill="none">
                                         <path fillRule="evenodd" fill="#1C1C1C"
@@ -80,7 +80,7 @@ function SkillsScrollDisplay() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl md:text-5xl mb-2">{skill.title}</h3>
+                                    <h3 className="text-xl md:text-5xl mb-3 md:mb-4">{skill.title}</h3>
                                     <p className={"text-sm md:text-2xl"}>{skill.description}</p>
                                 </div>
                             </a>
