@@ -15,9 +15,7 @@ export function Header() {
     const nav = useRef(null);
     const header = useRef(null);
 
-    const handleClick = () => {
-        setIsOpen(!isOpen);
-    }
+    const handleClick = () => {setIsOpen(!isOpen)}
 
     useEffect(() => {
         if (isOpen) {
@@ -36,7 +34,7 @@ export function Header() {
             tl.current = gsap
                 .timeline({paused: true})
                 // Hamburger icon animation
-                .to('.hamburgerLines', {
+                .to(['.hamburgerLines', '.hamburgerDesktop'], {
                     xPercent: 100,
                     stagger: 0.05,
                     duration: 0.4,
@@ -84,27 +82,33 @@ export function Header() {
     }, []);
 
     return (
-        <header className="fixed z-40 w-full top-0 md:hidden">
-            <div ref={header} className="container relative z-40 bg-black py-4 px-6 h-16 flex justify-between items-center">
-                <Image
-                    src={Logo}
-                    width={20}
-                    height={20}
-                    alt="Logo S"
-                />
-                    <button onClick={handleClick} className="relative w-6 h-5 overflow-hidden">
-                        <div className="hamburgerLines absolute top-0 text-white h-0.5 bg-white w-6"></div>
-                        <div className="hamburgerLines absolute top-2 text-white h-0.5 bg-white w-6"></div>
-                        <div className="hamburgerLines absolute top-4 text-white h-0.5 bg-white w-6"></div>
+        <header className="fixed z-40 w-full top-0 h-16 md:h-28">
+            <div ref={header} className="relative z-40 bg-black md:py-6">
+                <div className="container bg-black py-4 px-6 flex justify-between items-center">
+                    <Image
+                        src={Logo}
+                        width={20}
+                        height={20}
+                        alt="Logo S"
+                    />
+                    <button onClick={handleClick} className="relative w-6 h-6 overflow-hidden md:hidden">
+                        <div className="hamburgerLines absolute top-0.5 text-white h-0.5 bg-white w-6"></div>
+                        <div className="hamburgerLines absolute top-2.5 text-white h-0.5 bg-white w-6"></div>
+                        <div className="hamburgerLines absolute top-[1.125rem] text-white h-0.5 bg-white w-6"></div>
+                    </button>
+                    <button onClick={handleClick} className="overflow-hidden max-md:hidden h-6 text-white text-lg uppercase">
+                        <div className="hamburgerDesktop">Menu</div>
                     </button>
                     <button onClick={handleClick} className="crossButton hidden relative w-6 h-6 overflow-hidden">
                         <div className="cross absolute -top-2 -left-full text-white h-0.5 bg-white w-6 rotate-45"></div>
-                        <div className="cross absolute -top-2 -right-full text-white h-0.5 bg-white w-6 rotate-[135deg]"></div>
+                        <div
+                            className="cross absolute -top-2 -right-full text-white h-0.5 bg-white w-6 rotate-[135deg]"></div>
                     </button>
+                </div>
             </div>
             <div ref={nav} className="bg-black">
                 <ul
-                    className="container flex flex-col gap-14 items-center justify-center h-dvh pb-16 bg-black text-white text-5xl">
+                    className="container flex flex-col gap-14 items-center justify-center h-dvh pb-16 md:pb-28 bg-black text-white text-5xl">
                     <Link href={"/"} onClick={handleClick} className="overflow-hidden"><p
                         className="navElement">Accueil</p></Link>
                     <Link href={"/projects"} onClick={handleClick} className="overflow-hidden"><p
