@@ -59,9 +59,9 @@ export function Header() {
                 }, 0.4)
                 .from('.navElement', {
                     yPercent: 100,
-                    stagger: 0.2,
-                    duration: 0.4,
-                }, 0.9);
+                    stagger: 0.1,
+                    duration: 0.3,
+                }, 1);
 
             // Show header on scroll
             const showAnim = gsap.from(header.current, {
@@ -86,7 +86,7 @@ export function Header() {
     return (
         <header className="fixed z-40 w-full top-0 h-16 md:h-28">
             <div ref={header} className="relative z-40 bg-black md:py-4">
-                <div className="max-md:container bg-black py-4 px-6 md:px-10 flex justify-between items-center">
+                <div className="max-md:container bg-black py-4 px-6 md:px-12 flex justify-between items-center">
                     <Image src={Logo} width={20} height={20} alt="Logo S"/>
                     <button onClick={handleClick} className="relative w-6 h-6 overflow-hidden md:hidden">
                         <div className="hamburgerLines absolute top-0.5 text-white h-0.5 bg-white w-6"></div>
@@ -104,13 +104,21 @@ export function Header() {
                 </div>
             </div>
             <div ref={nav} className="bg-black">
-                <ul
-                    className="container flex flex-col gap-14 items-center justify-center h-dvh pb-16 md:pb-28 bg-black text-white text-5xl">
-                    <Link href={"/"} onClick={handleClick} className="overflow-hidden"><p
-                        className="navElement">Accueil</p></Link>
-                    <Link href={"/projects"} onClick={handleClick} className="overflow-hidden"><p
-                        className="navElement">Projets</p></Link>
-                </ul>
+                <div className="container h-screen">
+                    <ul
+                        className="flex flex-col gap-14 items-center justify-center h-full pb-16 md:pb-28 bg-black text-5xl">
+                        <Link href={"/"} onClick={handleClick}
+                              className="flex gap-6 overflow-hidden text-gray-300 md:hover:text-white transition-colors">
+                            <span className="text-base">01</span>
+                            <p className="navElement">Accueil</p>
+                        </Link>
+                        <Link href={"/projects"} onClick={handleClick}
+                              className="flex gap-6 overflow-hidden text-gray-300 md:hover:text-white transition-colors md:mb-20">
+                            <span className="text-base">02</span>
+                            <p className="navElement">Projets</p>
+                        </Link>
+                    </ul>
+                </div>
             </div>
             <DesktopNav/>
         </header>
