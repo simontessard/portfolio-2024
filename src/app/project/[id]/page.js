@@ -38,9 +38,9 @@ export default function ProjectPage() {
             <Template/>
             <ProjectHeader text={projects[params.id].title}/>
             <div ref={section} className={"flex flex-col gap-12 mt-20 items-center w-full z-10"}>
-                <Overview techno={projects[params.id].technologies}/>
+                <Overview date={projects[params.id].date} desc={projects[params.id].description} techno={projects[params.id].technologies} github={projects[params.id].github}/>
                 <div ref={contentSection} className={"container py-16 md:py-30"}>
-                    <Index/>
+                    <Index skills={projects[params.id].skills}/>
                     <div className={"flex max-md:flex-col-reverse gap-8 md:gap-40 items-center mt-20 md:mt-60 md:mb-40"}>
                         <SquareImage src={"https:/picsum.photos/1900/1600"}/>
                         <Paragraph>

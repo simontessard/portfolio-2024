@@ -41,15 +41,16 @@ export default function About(){
     });
     return (
         <section className="js-section_about bg-white py-16 md:py-24">
-            <div className={"container flex flex-col"}>
+            <div className={"container flex max-md:flex-col md:items-center justify-between"}>
                 <BigTitle title="à propos" color={"black"} multipleWords={true}/>
-                <div className={"self-end mb-12"}>
+                <div className={"mb-12"}>
                     <GithubButton/>
                 </div>
             </div>
             <div className="relative bg-white md:py-20 flex items-center justify-between max-md:mb-10">
-                <div ref={square} className="size-72 md:size-[34rem] bg-black"></div>
-                <p ref={text} className="absolute max-w-2xl md:max-w-5xl md:ml-12 p-8 text-white md:text-5xl mix-blend-difference">
+                <div ref={square} className="size-60 md:size-[34rem] bg-black"></div>
+                <p ref={text}
+                   className="absolute max-w-2xl md:max-w-5xl md:ml-12 p-4 md:p-8 text-white md:text-5xl mix-blend-difference">
                     Lorem ipsum dolor sit amet consectetur. Eget at sodales suspendisse
                     integer. Aliquam viverra purus gravida lectus tincidunt ridiculus elementum ut.
                 </p>

@@ -3,15 +3,13 @@ import { useLayoutEffect, useRef } from 'react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
-const phrases = ["Los Flamencos National Reserve", "is a nature reserve located", "in the commune of San Pedro de Atacama", "The reserve covers a total area", "of 740 square kilometres (290 sq mi)"]
-
-export default function Index() {
+export default function Index({skills}) {
 
     return (
-        <div className={"relative max-md:overflow-hidden text-white md:text-3xl uppercase mt-6 mb-20 md:mb-32"} >
+        <div className={"relative max-md:overflow-hidden text-white text-sm md:text-3xl uppercase mt-6 mb-20 md:mb-32"} >
             {
-                phrases.map( (phrase, index) => {
-                    return <AnimatedText key={index}>{phrase}</AnimatedText>
+                skills.map( (skill, index) => {
+                    return <AnimatedText key={index}>{skill}</AnimatedText>
                 })
             }
         </div>
@@ -62,5 +60,8 @@ function AnimatedText({children}) {
 
     }, [])
 
-    return <p className={"relative opacity-0"} ref={text}>{children}</p>
+    return <p className={"relative opacity-0 flex gap-4 md:gap-6 mb-4 md:mb-8"} ref={text}>
+        <span className="text-xs md:text-sm font-mono md:pt-1.5"> ■ </span>
+        {children}
+    </p>
 }
