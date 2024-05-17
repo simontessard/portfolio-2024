@@ -71,9 +71,9 @@ function SkillsScrollDisplay() {
                     {skills.map((skill, index) => (
                         <div key={index} className="h-dvh w-dvw flex justify-center items-center">
                             <a href="#"
-                                className={`relative h-[30dvh] md:h-[40dvh] flex flex-col justify-between p-4 md:p-8 w-[86vw] md:w-[60vw] ${skill.color ? skill.color : 'bg-purple-500'}`}>
+                                className={`relative h-[30dvh] md:h-[40dvh] flex flex-col justify-between p-4 md:p-8 w-[86vw] md:w-[60vw] bg-gradient-to-r from-${skill.color ? skill.color : 'purple'}-800 to-${skill.color ? skill.color : 'purple'}-700`}>
                                 <div className="self-end">
-                                    <svg className={"size-16 md:size-20"} viewBox="0 0 138 138" fill="none">
+                                    <svg className={"size-20 md:size-28"} viewBox="0 0 138 138" fill="none">
                                         <path fillRule="evenodd" fill="#1C1C1C"
                                               d="M3.01609e-06 1.90813e-06L5.20275e-06 34.5L69 69L1.50804e-06 103.5L0 138L69 103.5V138L138 103.5V69V34.5L69 0V34.5L3.01609e-06 1.90813e-06ZM69 34.5V69V103.5L138 69L69 34.5Z"
                                         />
