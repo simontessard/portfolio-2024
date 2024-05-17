@@ -113,9 +113,14 @@ export function Header() {
                             <p className="navElement">Accueil</p>
                         </Link>
                         <Link href={"/projects"} onClick={handleClick}
-                              className="flex gap-6 overflow-hidden text-gray-300 md:hover:text-white transition-colors md:mb-20">
+                              className="flex gap-6 overflow-hidden text-gray-300 md:hover:text-white transition-colors">
                             <span className="text-base">02</span>
                             <p className="navElement">Projets</p>
+                        </Link>
+                        <Link href={"mailto:simon.tessard@gmail.com"}
+                              className="flex gap-6 overflow-hidden text-gray-300 md:hover:text-white transition-colors">
+                            <span className="text-base">02</span>
+                            <p className="navElement">Contact</p>
                         </Link>
                     </ul>
                 </div>
