@@ -86,7 +86,7 @@ export function Header() {
     return (
         <header className="fixed z-40 w-full top-0 h-16 md:h-28">
             <div ref={header} className="relative z-40 bg-black md:py-4">
-                <div className="container bg-black py-4 px-6 flex justify-between items-center">
+                <div className="max-md:container bg-black py-4 px-6 md:px-10 flex justify-between items-center">
                     <Image src={Logo} width={20} height={20} alt="Logo S"/>
                     <button onClick={handleClick} className="relative w-6 h-6 overflow-hidden md:hidden">
                         <div className="hamburgerLines absolute top-0.5 text-white h-0.5 bg-white w-6"></div>
