@@ -38,22 +38,26 @@ export default function ProjectPage() {
             <Template/>
             <ProjectHeader text={projects[params.id].title}/>
             <div ref={section} className={"flex flex-col gap-12 mt-20 items-center w-full z-10"}>
-                <Overview/>
+                <Overview techno={projects[params.id].technologies}/>
                 <div ref={contentSection} className={"container py-16 md:py-30"}>
                     <Index/>
-                    <div className={"flex max-md:flex-col gap-8 md:gap-40 items-center mt-20 md:mt-36 md:mb-40"}>
+                    <div className={"flex max-md:flex-col-reverse gap-8 md:gap-40 items-center mt-20 md:mt-60 md:mb-40"}>
                         <SquareImage src={"https:/picsum.photos/1900/1600"}/>
                         <Paragraph>
-                            Suspendisse potenti. Quisque vel molestie felis, eget viverra velit
-                            Mauris ac pretium purus, ac convallis lectus. Donec ut elit magna. Vestibulum turpis turpis
+                            {projects[params.id].explication1}
                         </Paragraph>
                     </div>
-                    <div className={"flex max-md:flex-col gap-8 md:gap-40 items-center"}>
+                    <div className={"flex max-md:flex-col gap-8 md:gap-40 items-center md:my-60"}>
                         <Paragraph>
-                            Suspendisse potenti. Quisque vel molestie felis, eget viverra velit
-                            Mauris ac pretium purus, ac convallis lectus. Donec ut elit magna. Vestibulum turpis turpis
+                            {projects[params.id].explication2}
                         </Paragraph>
                         <SquareImage src={"https:/picsum.photos/1800/1600"}/>
+                    </div>
+                    <div className={"flex max-md:flex-col-reverse gap-8 md:gap-40 items-center mt-20 md:mt-36 md:mb-40"}>
+                        <SquareImage src={"https:/picsum.photos/1900/1600"}/>
+                        <Paragraph>
+                            {projects[params.id].explication3}
+                        </Paragraph>
                     </div>
                 </div>
                 <BottomPreview id={params.id}/>
