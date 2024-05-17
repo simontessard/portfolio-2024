@@ -21,7 +21,7 @@ export function Header() {
         if (isOpen) {
             tl.current.play();
         } else {
-            tl.current.reverse();
+            tl.current.progress(1).reverse();
         }
     }, [isOpen]);
 
@@ -70,27 +70,24 @@ export function Header() {
                 duration: 0.4
             }).progress(1);
 
-            ScrollTrigger.create({
-                start: "top top",
-                end: "max",
-                onUpdate: (self) => {
-                   self.direction === -1 ? showAnim.play() : showAnim.reverse();
-                }
-            });
+            if (!isOpen) {
+                ScrollTrigger.create({
+                    start: "top top",
+                    end: "max",
+                    onUpdate: (self) => {
+                    self.direction === -1 ? showAnim.play() : showAnim.reverse();
+                    }
+                });
+            }
         });
         return () => ctx.revert();
-    }, []);
+    }, [isOpen]);
 
     return (
         <header className="fixed z-40 w-full top-0 h-16 md:h-28">
-            <div ref={header} className="relative z-40 bg-black md:py-6">
+            <div ref={header} className="relative z-40 bg-black md:py-4">
                 <div className="container bg-black py-4 px-6 flex justify-between items-center">
-                    <Image
-                        src={Logo}
-                        width={20}
-                        height={20}
-                        alt="Logo S"
-                    />
+                    <Image src={Logo} width={20} height={20} alt="Logo S"/>
                     <button onClick={handleClick} className="relative w-6 h-6 overflow-hidden md:hidden">
                         <div className="hamburgerLines absolute top-0.5 text-white h-0.5 bg-white w-6"></div>
                         <div className="hamburgerLines absolute top-2.5 text-white h-0.5 bg-white w-6"></div>
