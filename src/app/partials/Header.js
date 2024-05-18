@@ -85,8 +85,8 @@ export function Header() {
 
     return (
         <header className="fixed z-40 w-full top-0 h-16 md:h-28">
-            <div ref={header} className="relative z-40 bg-black md:py-4">
-                <div className="max-md:container bg-black py-4 px-6 md:px-12 flex justify-between items-center">
+            <div ref={header} className="relative z-40 bg-black max-md:p-1.5 md:py-4">
+                <div className="max-md:container bg-black py-4 md:px-12 flex justify-between items-center">
                     <Image src={Logo} width={20} height={20} alt="Logo S"/>
                     <button onClick={handleClick} className="relative w-6 h-6 overflow-hidden md:hidden">
                         <div className="hamburgerLines absolute top-0.5 text-white h-0.5 bg-white w-6"></div>
@@ -105,24 +105,26 @@ export function Header() {
             </div>
             <div ref={nav} className="bg-black">
                 <div className="container h-screen">
-                    <ul
-                        className="flex flex-col gap-14 items-center justify-center h-full pb-16 md:pb-28 bg-black text-5xl">
-                        <Link href={"/"} onClick={handleClick}
-                              className="flex gap-6 overflow-hidden text-gray-400 md:hover:text-white transition-colors">
-                            <span className="text-base">01</span>
-                            <p className="navElement">Accueil</p>
-                        </Link>
-                        <Link href={"/projects"} onClick={handleClick}
-                              className="flex gap-6 overflow-hidden text-gray-400 md:hover:text-white transition-colors">
-                            <span className="text-base">02</span>
-                            <p className="navElement">Projets</p>
-                        </Link>
-                        <Link href={"mailto:simon.tessard@gmail.com"}
-                              className="flex gap-6 overflow-hidden text-gray-400 md:hover:text-white transition-colors">
-                            <span className="text-base">03</span>
-                            <p className="navElement">Contact</p>
-                        </Link>
-                    </ul>
+                    <div
+                        className="flex flex-col items-center justify-center h-full pb-16 md:pb-28 bg-black">
+                        <div className="flex flex-col gap-14 justify-center h-full text-5xl">
+                            <Link href={"/"} onClick={handleClick}
+                                  className="flex gap-6 overflow-hidden text-gray-400 md:hover:text-white transition-colors">
+                                <span className="text-sm w-3">01</span>
+                                <p className="navElement">Accueil</p>
+                            </Link>
+                            <Link href={"/projects"} onClick={handleClick}
+                                  className="flex gap-6 overflow-hidden text-gray-400 md:hover:text-white transition-colors">
+                                <span className="text-sm w-3">02</span>
+                                <p className="navElement">Projets</p>
+                            </Link>
+                            <Link href={"mailto:simon.tessard@gmail.com"}
+                                  className="flex gap-6 overflow-hidden text-gray-400 md:hover:text-white transition-colors">
+                                <span className="text-sm w-3">03</span>
+                                <p className="navElement">Contact</p>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
             <DesktopNav/>

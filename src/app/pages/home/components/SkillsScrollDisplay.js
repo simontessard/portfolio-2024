@@ -58,7 +58,7 @@ function SkillsScrollDisplay() {
                 the animation should alway be two separated refs */}
             <div ref={triggerRef} className={"relative"}>
                 <div className={"absolute top-12 w-full"}>
-                    <div className={"container max-md:w-full max-md:flex max-md:justify-center"}>
+                    <div className={"container max-md:w-full max-md:flex max-md:justify-center md:mt-6"}>
                         <BigTitle title="Skills"/>
                     </div>
                 </div>

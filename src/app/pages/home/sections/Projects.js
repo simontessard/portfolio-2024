@@ -1,6 +1,7 @@
 import { BigTitle } from "@/app/components/BigTitle";
 import {ProjectsScrollDisplay} from "@/app/pages/home/components/ProjectsScrollDisplay";
 import Link from "next/link";
+import {Button} from "@/app/components/Buttons/Button";
 
 export function Projects() {
   return (
@@ -13,7 +14,9 @@ export function Projects() {
                Certains ont aussi été développé pendant mon BTS SIO
                (Services Informatiques Aux Organisations).
             </p>
-            <Link href="/projects" className="max-md:text-xs underline underline-offset-4 self-end">Retrouvez tous mes projets ici</Link>
+            <div className="self-end">
+                <Button text={"Retrouvez tous mes projets ici"} href={'/projects'} color={"white"}/>
+            </div>
         </div>
         <ProjectsScrollDisplay/>
     </div>
