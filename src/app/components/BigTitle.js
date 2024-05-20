@@ -32,7 +32,7 @@ export function BigTitle({title, color, multipleWords = false}) {
     return (
         <h2 className={`font-sans text-${color} text-5xl md:text-9xl tracking-tight uppercase w-fit mb-12 md:mb-16`}>
            <div className="overflow-hidden italic pr-6">
-              <span ref={splitText} className="inline-block">{title}</span>
+              <span ref={splitText} className="block">{title}</span>
            </div>
         </h2>
     );
