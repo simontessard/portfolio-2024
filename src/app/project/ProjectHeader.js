@@ -6,7 +6,7 @@ import image1 from "@/app/assets/img/placeholder.jpg"
 import Image from "next/image";
 import GoBackButton from "@/app/components/Buttons/GoBackButton";
 
-export default function ProjectHeader({text}){
+export default function ProjectHeader({text, img}){
     const backgroundImg = useRef(null);
     const title = useRef(null);
     const goBackButton = useRef(null);
@@ -50,7 +50,7 @@ export default function ProjectHeader({text}){
                 <GoBackButton/>
             </div>
             <div ref={backgroundImg} className="relative w-full h-full overflow-hidden">
-                <Image className={"w-full h-full object-cover"} src={image1} alt={"random"}/>
+                <Image className={"w-full h-full object-cover"} width={'2000'} height={'2000'} src={img} alt={"random"}/>
                 <div className={"absolute top-0 left-0 w-full h-full bg-black/40"}></div>
             </div>
             <div className={"absolute z-0 flex flex-col items-center justify-center top-0 h-full w-full "}>

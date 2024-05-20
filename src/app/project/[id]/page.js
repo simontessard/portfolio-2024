@@ -36,7 +36,7 @@ export default function ProjectPage() {
     return (
         <section className="flex flex-col items-center text-white">
             <Template/>
-            <ProjectHeader text={projects[params.id].title}/>
+            <ProjectHeader text={projects[params.id].title} img={projects[params.id].cover}/>
             <div ref={section} className={"flex flex-col gap-12 mt-20 items-center w-full z-10"}>
                 <Overview date={projects[params.id].date} desc={projects[params.id].description} techno={projects[params.id].technologies} github={projects[params.id].github}/>
                 <div ref={contentSection} className={"container py-16 md:py-30"}>
