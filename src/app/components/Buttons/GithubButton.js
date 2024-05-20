@@ -8,7 +8,7 @@ export default function GithubButton() {
             <Image className={"md:group-hover:-translate-x-full duration-500 delay-150 transition-transform size-10"}
                    src={github} alt={""}/>
             <span
-                className={"px-4 pt-1 md:group-hover:-translate-x-10 transition-transform delay-75 duration-500 uppercase"}> My Github</span>
+                className={"px-4 pt-1 md:group-hover:-translate-x-10 transition-transform delay-75 duration-500 uppercase"}> Mon Github</span>
             <span
                 className={"absolute flex items-center justify-center pt-1 size-10 z-10 -bottom-32 right-0 md:group-hover:-translate-y-32 duration-500 transition-transform bg-white h-full"}>
                     </span>

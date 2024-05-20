@@ -6,7 +6,7 @@ import {Button} from "@/app/components/Buttons/Button";
 export function Projects() {
   return (
     <div className="container bg-black text-white py-20 md:py-24">
-        <BigTitle title="Projects"/>
+        <BigTitle title="Projets"/>
         <div className="flex flex-col ml-auto md:max-w-3xl md:mt-20 mb-10 md:mb-12">
             <p className="text-sm md:text-lg mb-5 md:mb-8">
                La très grande majorité de mes projets a été réalisé cette année durant

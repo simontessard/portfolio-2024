@@ -28,7 +28,7 @@ export default function ScrollDownButton() {
     }, []);
     return (
         <button className={"relative overflow-hidden h-5 md:text-lg uppercase pr-6"}>
-            Scroll to discover
+            Scrollez pour découvrir
             <span ref={arrow} className="absolute -top-full right-0 h-4 font-marbry text-xl md:text-2xl">↓</span>
         </button>
     );

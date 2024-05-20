@@ -46,7 +46,7 @@ export function WorkWithMe() {
   return (
       <section ref={section} className={"relative bg-white py-16 md:py-28 max-md:mb-8 overflow-hidden"}>
           <div className="container text-black">
-               <BigTitle title="Let's connect" color={"black"} multipleWords={true}/>
+               <BigTitle title="Connectons !" color={"black"} multipleWords={true}/>
               <div className="text-sm md:text-lg">
                   <p className={"mb-4 md:mb-6"}>Vous avez un projet sur lequel vous aimeriez que je
                       travaille ? Vous avez besoin de mes compétences pour un projet ?</p>

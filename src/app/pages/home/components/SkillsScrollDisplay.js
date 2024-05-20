@@ -59,7 +59,7 @@ export default function SkillsScrollDisplay() {
             <div ref={triggerRef} className={"relative"}>
                 <div className={"absolute top-12 w-full"}>
                     <div className={"container max-md:w-full max-md:flex max-md:justify-center md:mt-6"}>
-                        <BigTitle title="Skills"/>
+                        <BigTitle title="Compétences"/>
                     </div>
                 </div>
                 <div ref={instruction} className={"absolute text-sm uppercase flex justify-center w-full bottom-20 overflow-hidden"}>
