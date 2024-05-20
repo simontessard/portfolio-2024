@@ -7,7 +7,7 @@ import {BigTitle} from "@/app/components/BigTitle";
 import {skills} from "@/app/data/skills";
 
 // https://www.youtube.com/watch?v=PeFqGrEHnp0&ab_channel=IvanSmiths
-function SkillsScrollDisplay() {
+export default function SkillsScrollDisplay() {
     const sectionRef = useRef(null);
     const triggerRef = useRef(null);
     const instruction = useRef(null);
@@ -67,11 +67,10 @@ function SkillsScrollDisplay() {
                         <ScrollDownButton/>
                     </div>
                 </div>
-                <div ref={sectionRef} className="h-dvh w-[400vw] flex relative md:mt-12">
+                <ul ref={sectionRef} className="h-dvh w-[400vw] flex relative md:mt-12">
                     {skills.map((skill, index) => (
-                        <div key={index} className="h-dvh w-dvw flex justify-center items-center">
-                            <a href="#"
-                                className={`relative h-[30dvh] md:h-[40dvh] flex flex-col justify-between p-4 md:p-8 w-[86vw] md:w-[60vw] bg-gradient-to-r from-${skill.color ? skill.color : 'purple'}-800 to-${skill.color ? skill.color : 'purple'}-700`}>
+                        <li key={index} className="h-dvh w-dvw flex justify-center items-center">
+                            <div className={`relative h-[30dvh] md:h-[40dvh] flex flex-col justify-between p-4 md:p-8 w-[86vw] md:w-[60vw] bg-blue-700`}>
                                 <div className="self-end">
                                     <svg className={"size-20 md:size-28"} viewBox="0 0 138 138" fill="none">
                                         <path fillRule="evenodd" fill="#1C1C1C"
@@ -83,13 +82,11 @@ function SkillsScrollDisplay() {
                                     <h3 className="text-xl md:text-5xl mb-3 md:mb-4">{skill.title}</h3>
                                     <p className={"text-sm md:text-2xl"}>{skill.description}</p>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </li>
                     ))}
-                </div>
+                </ul>
             </div>
         </section>
     );
 }
-
-export default SkillsScrollDisplay;

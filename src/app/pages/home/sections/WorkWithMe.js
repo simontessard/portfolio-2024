@@ -3,6 +3,7 @@ import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {ContactButton} from "@/app/components/Buttons/ContactButton";
+import {BigTitle} from "@/app/components/BigTitle";
 
 export function WorkWithMe() {
     const section = useRef(null);
@@ -28,7 +29,7 @@ export function WorkWithMe() {
                     end: "400",
                     scrub: 1,
                 },
-                yPercent : -200.5
+                yPercent : -205
             });
             gsap.to('.blackSquare', {
                 scrollTrigger: {
@@ -37,7 +38,7 @@ export function WorkWithMe() {
                     end: "350",
                     scrub: 1,
                 },
-                yPercent : 200.5
+                yPercent : 205
             });
 
         });
@@ -45,7 +46,7 @@ export function WorkWithMe() {
   return (
       <section ref={section} className={"relative bg-white py-16 md:py-28 max-md:mb-8 overflow-hidden"}>
           <div className="container text-black">
-              <h2 className="text-3xl md:text-8xl font-bold mb-8 md:mb-20 font-marbry">Travaillons ensemble</h2>
+               <BigTitle title="Let's connect" color={"black"} multipleWords={true}/>
               <div className="text-sm md:text-lg">
                   <p className={"mb-4 md:mb-6"}>Vous avez un projet sur lequel vous aimeriez que je
                       travaille ? Vous avez besoin de mes compétences pour un projet ?</p>
