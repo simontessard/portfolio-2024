@@ -26,13 +26,13 @@ export default function ProjectHeader({text, img}){
             }
         );
         tl.fromTo(backgroundImg.current, {
-            clipPath: "inset(25%)",
+            clipPath: "inset(30%)",
         }, {
             y : 100,
             clipPath: "inset(0%)",
         }, 0);
         tl.to(title.current, {
-            y: 100,
+            y: 150,
         }, 0);
         tl.to(title.current, {
             opacity: 1,

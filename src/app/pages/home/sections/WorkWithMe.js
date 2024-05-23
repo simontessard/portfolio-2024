@@ -14,13 +14,15 @@ export function WorkWithMe() {
         let mm = gsap.matchMedia();
 
         mm.add("(min-width: 800px)", () => {
-            gsap.to(section.current, {
+            gsap.fromTo(section.current, {
+                y: 100,
+            }, {
                 scrollTrigger: {
                     trigger: section.current,
                     start: "top 50%",
                     scrub: 1,
                 },
-                y: -75,
+                y: 0,
             });
             gsap.to('.baseCube', {
                 scrollTrigger: {
@@ -44,7 +46,7 @@ export function WorkWithMe() {
         });
     }, []);
   return (
-      <section ref={section} className={"relative bg-white py-16 md:py-28 max-md:mb-8 overflow-hidden"}>
+      <section ref={section} className={"relative bg-white py-16 md:py-28 overflow-hidden"}>
           <div className="container text-black">
                <BigTitle title="Connectons !" color={"black"} multipleWords={true}/>
               <div className="text-sm md:text-lg">
