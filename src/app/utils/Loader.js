@@ -10,6 +10,7 @@ export function Loader() {
     const container = useRef(null);
     const loader = useRef(null);
     const flash = useRef(null);
+    const bar = useRef(null);
 
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
@@ -19,7 +20,7 @@ export function Loader() {
                 tl.add(
                     gsap.to(loader.current,
                         {
-                        delay: 0.8,
+                        delay: 1,
                         duration: 0.4,
                         yPercent: 100,
                     }))
@@ -38,6 +39,15 @@ export function Loader() {
                         opacity: 0,
                     }), 2);
 
+                tl.add(
+                    gsap.to(bar.current, {
+                        duration: 1.2,
+                        xPercent: 100,
+                        onComplete: () => {
+                            gsap.set(bar.current, {opacity: 0});
+                        }
+                    }), 0);
+
             return () => ctx.revert();
         }, []);
     });
@@ -53,6 +63,7 @@ export function Loader() {
                     />
             </div>
             <div ref={flash} className="absolute -left-full bg-white w-full h-full"></div>
+            <div ref={bar} className="absolute -left-full bottom-0 bg-white h-2.5 w-full"></div>
         </div>
     );
 

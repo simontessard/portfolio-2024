@@ -70,9 +70,10 @@ export function ProjectsScrollDisplay() {
                                         ))}
                                     </div>
                                     <Link href={`/project/${project.id}`}
-                                          className={"bg-white leading-none pt-2.5 pb-2 px-5 text-black uppercase"}>
-                                        Voir plus
-                                        <span className="ml-2 text-xl md:text-xl font-marbry">↗</span>
+                                          className={"group relative bg-white leading-none pt-2.5 pb-2 px-5 text-black md:hover:text-white transition-colors uppercase overflow-hidden"}>
+                                        <span className="relative z-10">Voir plus</span>
+                                        <span className="relative z-10 ml-2 text-xl md:text-xl font-marbry">↗</span>
+                                        <div className={`absolute -bottom-full left-0 md:group-hover:-translate-y-full transition-transform w-full h-full ${project.color}`}></div>
                                     </Link>
                                 </div>
                             </li>

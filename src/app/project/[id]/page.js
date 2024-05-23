@@ -35,7 +35,7 @@ export default function ProjectPage() {
     }, []);
     return (
         <section className="flex flex-col items-center text-white">
-            <Template/>
+            <Template color={"white"}/>
             <ProjectHeader text={projects[params.id].title} img={projects[params.id].cover}/>
             <div ref={section} className={"flex flex-col gap-12 mt-20 items-center w-full z-10"}>
                 <Overview date={projects[params.id].date} desc={projects[params.id].description} techno={projects[params.id].technologies} github={projects[params.id].github}/>

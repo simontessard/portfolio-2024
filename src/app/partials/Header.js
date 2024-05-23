@@ -1,7 +1,6 @@
 "use client";
 import Logo from "@/app/assets/img/Logo.png";
 import Image from "next/image";
-import DesktopNav from "@/app/partials/DesktopNav";
 import {useLayoutEffect, useState, useRef, useEffect} from "react";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
@@ -14,6 +13,12 @@ export function Header() {
 
     const nav = useRef(null);
     const header = useRef(null);
+
+    const navLinks = [
+        { id: '01', href: '/', text: 'Accueil' },
+        { id: '02', href: '/projects', text: 'Projets' },
+        { id: '03', href: 'mailto:simon.tessard@gmail.com', text: 'Contact' },
+    ];
 
     const handleClick = () => {setIsOpen(!isOpen)}
 
@@ -104,30 +109,24 @@ export function Header() {
                 </div>
             </div>
             <div ref={nav} className="bg-black">
-                <div className="container h-screen">
-                    <div
-                        className="flex flex-col items-center justify-center h-full pb-16 md:pb-28 bg-black">
-                        <div className="flex flex-col gap-14 justify-center h-full text-5xl">
-                            <Link href={"/"} onClick={handleClick}
-                                  className="flex gap-6 overflow-hidden text-gray-400 md:hover:text-white transition-colors">
-                                <span className="text-sm w-3">01</span>
-                                <p className="navElement">Accueil</p>
-                            </Link>
-                            <Link href={"/projects"} onClick={handleClick}
-                                  className="flex gap-6 overflow-hidden text-gray-400 md:hover:text-white transition-colors">
-                                <span className="text-sm w-3">02</span>
-                                <p className="navElement">Projets</p>
-                            </Link>
-                            <Link href={"mailto:simon.tessard@gmail.com"}
-                                  className="flex gap-6 overflow-hidden text-gray-400 md:hover:text-white transition-colors">
-                                <span className="text-sm w-3">03</span>
-                                <p className="navElement">Contact</p>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+               <div className="container h-screen flex flex-col items-center justify-center pb-16 md:pb-28 bg-black">
+                  <div className="flex flex-col gap-14 justify-center h-full text-5xl">
+                      {navLinks.map((link) => (
+                          <NavElement key={link.id} {...link} handleClick={handleClick} />
+                      ))}
+                  </div>
+               </div>
             </div>
-            <DesktopNav/>
         </header>
+    );
+}
+
+function NavElement({ id, href, text, handleClick }) {
+    return (
+        <Link href={href} onClick={handleClick}
+              className="flex gap-6 overflow-hidden text-gray-400 md:hover:text-white transition-colors">
+            <span className="text-sm w-3">{id}</span>
+            <p className="navElement">{text}</p>
+        </Link>
     );
 }
