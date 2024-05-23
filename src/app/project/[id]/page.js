@@ -42,19 +42,19 @@ export default function ProjectPage() {
                 <div ref={contentSection} className={"container py-16 md:py-30"}>
                     <Index skills={projects[params.id].skills}/>
                     <div className={"flex max-md:flex-col-reverse gap-8 md:gap-40 items-center mt-20 md:mt-60 md:mb-40"}>
-                        <SquareImage src={"https:/picsum.photos/1900/1600"}/>
+                        <SquareImage src={projects[params.id].img1}/>
                         <Paragraph>
                             {projects[params.id].explication1}
                         </Paragraph>
                     </div>
-                    <div className={"flex max-md:flex-col gap-8 md:gap-40 items-center md:my-60"}>
+                    <div className={"flex max-md:flex-col md:justify-end gap-8 md:gap-40 items-center md:my-60"}>
                         <Paragraph>
                             {projects[params.id].explication2}
                         </Paragraph>
-                        <SquareImage src={"https:/picsum.photos/1800/1600"}/>
+                        <SquareImage src={projects[params.id].img2}/>
                     </div>
                     <div className={"flex max-md:flex-col-reverse gap-8 md:gap-40 items-center mt-20 md:mt-36 md:mb-40"}>
-                        <SquareImage src={"https:/picsum.photos/1900/1600"}/>
+                        <SquareImage src={projects[params.id].img3}/>
                         <Paragraph>
                             {projects[params.id].explication3}
                         </Paragraph>
@@ -81,7 +81,7 @@ function Paragraph({children}) {
                     start: "top 90%",
                     scrub: 1,
                 },
-                y: -50,
+                y: -40,
             });
         });
     });
