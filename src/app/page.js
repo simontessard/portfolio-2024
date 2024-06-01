@@ -20,7 +20,6 @@ export default function Home() {
         <TechList />
         <Projects/>
         <WorkWithMe/>
-        <ScrollToTop/>
     </main>
   );
 }
