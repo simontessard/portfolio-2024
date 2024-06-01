@@ -46,7 +46,7 @@ export default function ProjectHeader({text, img}){
     })
     return (
         <div className={"relative h-screen w-full"}>
-            <div className="opacity-0 absolute z-10 top-64 left-4 md:left-20" ref={goBackButton}>
+            <div className="max-md:hidden opacity-0 absolute z-10 top-64 left-4 md:left-20" ref={goBackButton}>
                 <GoBackButton/>
             </div>
             <div ref={backgroundImg} className="relative w-full h-full overflow-hidden">

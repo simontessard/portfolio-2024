@@ -20,40 +20,44 @@ export default function ProjectPage() {
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        const tl2 = gsap.timeline(
-            {
-                scrollTrigger: {
-                    trigger: section.current,
-                    start: "top 60%",
-                    scrub: 1,
-                },
-            }
-        );
-        tl2.to(contentSection.current, {
-            y: -150,
-        }, 0);
+        let mm = gsap.matchMedia();
+
+        mm.add("(min-width: 768px)", () => {
+            const tl2 = gsap.timeline(
+                {
+                    scrollTrigger: {
+                        trigger: section.current,
+                        start: "top 60%",
+                        scrub: 1,
+                    },
+                }
+            );
+            tl2.to(contentSection.current, {
+                y: -150,
+            }, 0);
+        });
     }, []);
     return (
         <section className="flex flex-col items-center text-white">
             <Template color={"white"}/>
             <ProjectHeader text={projects[params.id].title} img={projects[params.id].cover}/>
-            <div ref={section} className={"flex flex-col gap-12 mt-20 items-center w-full z-10"}>
+            <div ref={section} className={"flex flex-col md:gap-32 mt-20 items-center w-full z-10"}>
                 <Overview date={projects[params.id].date} desc={projects[params.id].description} techno={projects[params.id].technologies} github={projects[params.id].github}/>
-                <div ref={contentSection} className={"container py-16 md:py-30"}>
+                <div ref={contentSection} className={"md:container pb-20 md:py-30"}>
                     <Index skills={projects[params.id].skills}/>
-                    <div className={"flex max-md:flex-col-reverse gap-8 md:gap-40 items-center mt-20 md:mt-60 md:mb-40"}>
+                    <div className={"flex max-md:flex-col md:gap-40 items-center mb-20 md:mb-44"}>
                         <SquareImage src={projects[params.id].img1}/>
                         <Paragraph>
                             {projects[params.id].explication1}
                         </Paragraph>
                     </div>
-                    <div className={"flex max-md:flex-col md:justify-end gap-8 md:gap-40 items-center md:my-60"}>
+                    <div className={"flex max-md:flex-col-reverse md:justify-end md:gap-40 items-center mb-20 md:mb-44"}>
                         <Paragraph>
                             {projects[params.id].explication2}
                         </Paragraph>
                         <SquareImage src={projects[params.id].img2}/>
                     </div>
-                    <div className={"flex max-md:flex-col-reverse gap-8 md:gap-40 items-center mt-20 md:mt-36 md:mb-40"}>
+                    <div className={"flex max-md:flex-col md:gap-40 items-center"}>
                         <SquareImage src={projects[params.id].img3}/>
                         <Paragraph>
                             {projects[params.id].explication3}
