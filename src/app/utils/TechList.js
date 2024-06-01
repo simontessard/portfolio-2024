@@ -11,9 +11,10 @@ const TechList = () => {
 
     const slice = {
         items: [
+            { tech_color: "#22d3ee", tech_name: "TailwindCSS" },
+            { tech_color: "white", tech_name: "NextJS" },
+            { tech_color: "#808080", tech_name: "Wordpress" },
             { tech_color: "#61DBFB", tech_name: "React" },
-            { tech_color: "#42b883", tech_name: "Vue" },
-            { tech_color: "#C62828", tech_name: "Angular" },
         ],
     };
 
