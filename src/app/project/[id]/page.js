@@ -43,7 +43,7 @@ export default function ProjectPage() {
             <ProjectHeader text={projects[params.id].title} img={projects[params.id].cover}/>
             <div ref={section} className={"flex flex-col md:gap-32 mt-20 items-center w-full z-10"}>
                 <Overview date={projects[params.id].date} desc={projects[params.id].description} techno={projects[params.id].technologies} github={projects[params.id].github}/>
-                <div ref={contentSection} className={"md:container pb-20 md:py-30"}>
+                <div ref={contentSection} className={"md:container max-md:pb-16 md:pt-30"}>
                     <Index skills={projects[params.id].skills}/>
                     <div className={"flex max-md:flex-col md:gap-40 items-center mb-20 md:mb-44"}>
                         <SquareImage src={projects[params.id].img1}/>
@@ -57,12 +57,13 @@ export default function ProjectPage() {
                         </Paragraph>
                         <SquareImage src={projects[params.id].img2}/>
                     </div>
-                    <div className={"flex max-md:flex-col md:gap-40 items-center"}>
+                    <div className={"flex max-md:flex-col md:gap-40 items-center mb-16"}>
                         <SquareImage src={projects[params.id].img3}/>
                         <Paragraph>
                             {projects[params.id].explication3}
                         </Paragraph>
                     </div>
+                    <div className="animate-bounce font-marbry w-fit mx-auto text-4xl md:text-6xl">↑</div>
                 </div>
                 <BottomPreview id={params.id}/>
             </div>
