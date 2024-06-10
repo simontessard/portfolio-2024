@@ -1,9 +1,8 @@
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
-import {useLayoutEffect, useRef} from "react";
+import {useLayoutEffect} from "react";
 
 export function SquareImage({src}) {
-    const imgContainer = useRef(null);
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -11,22 +10,32 @@ export function SquareImage({src}) {
         let mm = gsap.matchMedia();
 
         mm.add("(min-width: 768px)", () => {
-            gsap.to(imgContainer.current, {
-                scrollTrigger: {
-                    trigger: imgContainer.current,
-                    start: "top 90%",
-                    scrub: 1,
-                },
-                y: -80,
+            gsap.utils.toArray('.img-container').forEach(container => {
+                const img = container.querySelector('img');
+
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: container,
+                        scrub: true,
+                        pin: false,
+                    }
+                });
+
+                tl.fromTo(img, {
+                    yPercent: -20,
+                    ease: 'none'
+                }, {
+                    yPercent: 20,
+                    ease: 'none'
+                });
             });
         });
     });
 
     return (
-        <div ref={imgContainer} className={"group overflow-hidden max-md:mx-auto max-md:max-h-72 md:max-w-lg w-full h-full md:aspect-square mb-6 md:mb-8"}>
+        <div className={"img-container relative group overflow-hidden max-md:mx-auto max-md:max-h-72 md:max-w-lg w-full h-full md:aspect-square mb-6 md:mb-8"}>
             <img
-                className={"w-full h-full object-cover md:group-hover:scale-100 scale-110 " +
-                    "transition-transform delay-75 duration-500"}
+                className={"md:absolute md:top-0 md:left-1/2 w-auto h-full object-cover scale-150 md:-translate-x-1/2 origin-center"}
                 src={src} alt="random"/>
         </div>
     )
