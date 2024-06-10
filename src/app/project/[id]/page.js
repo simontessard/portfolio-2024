@@ -23,25 +23,27 @@ export default function ProjectPage() {
         let mm = gsap.matchMedia();
 
         mm.add("(min-width: 768px)", () => {
-            const tl2 = gsap.timeline(
-                {
-                    scrollTrigger: {
-                        trigger: section.current,
-                        start: "top 60%",
-                        scrub: 1,
-                    },
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section.current,
+                    scrub: true,
                 }
-            );
-            tl2.to(contentSection.current, {
-                y: -150,
-            }, 0);
+            });
+
+            tl.fromTo(section.current, {
+                yPercent: 0,
+                ease: 'none'
+            },{
+                yPercent: -15,
+                ease: 'none'
+            });
         });
     }, []);
     return (
         <section className="flex flex-col items-center text-white">
             <Template color={"white"}/>
             <ProjectHeader text={projects[params.id].title} img={projects[params.id].cover}/>
-            <div ref={section} className={"flex flex-col md:gap-32 mt-20 items-center w-full z-10"}>
+            <div ref={section} className={"flex flex-col md:gap-32 pt-20 items-center w-full z-10"}>
                 <Overview date={projects[params.id].date} desc={projects[params.id].description} techno={projects[params.id].technologies} github={projects[params.id].github}/>
                 <div ref={contentSection} className={"md:container max-md:pb-16 md:pt-30"}>
                     <Index skills={projects[params.id].skills}/>
