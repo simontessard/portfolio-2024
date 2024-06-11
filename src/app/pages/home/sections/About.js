@@ -40,7 +40,8 @@ export default function About(){
 
     });
     return (
-        <section className="js-section_about bg-white py-16 md:py-24">
+        <section className="js-section_about bg-white pb-16 md:pb-24">
+            <p className="container font-bold text-[12vw] -mt-6 md:-mt-24 mb-12">DEVELOPPEUR</p>
             <div className={"container flex max-md:flex-col md:items-center justify-between"}>
                 <BigTitle title="à propos" color={"black"} multipleWords={true}/>
                 <div className={"mb-12"}>

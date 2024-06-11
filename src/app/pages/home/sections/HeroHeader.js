@@ -10,9 +10,6 @@ export function HeroHeader() {
                       <span className={"md:text-[16vh]"}>TESSARD</span>
                   </h1>
                   <span className="text-4xl md:hidden mt-2 mb-4">👨🏼‍💻</span>
-                  <h2 className="flex font-sans text-4xl md:text-[10vh] uppercase max-md:mb-4">
-                      <span className="font-marbry mr-3">→</span> Développeur <br></br>
-                  </h2>
               </div>
               <ScrollDownButton/>
           </div>
