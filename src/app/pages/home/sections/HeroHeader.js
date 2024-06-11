@@ -11,7 +11,7 @@ export function HeroHeader() {
                   </h1>
                   <span className="text-4xl md:hidden mt-2 mb-4">👨🏼‍💻</span>
               </div>
-              <ScrollDownButton/>
+              <ScrollDownButton text="Scrollez"/>
           </div>
       </div>
   );

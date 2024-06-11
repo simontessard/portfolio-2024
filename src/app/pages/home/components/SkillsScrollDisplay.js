@@ -64,7 +64,7 @@ export default function SkillsScrollDisplay() {
                 </div>
                 <div ref={instruction} className={"absolute text-sm uppercase flex justify-center w-full bottom-20 overflow-hidden"}>
                     <div ref={scrollDownButton}>
-                        <ScrollDownButton/>
+                        <ScrollDownButton text="Scrollez pour découvrir"/>
                     </div>
                 </div>
                 <ul ref={sectionRef} className="h-dvh w-[400vw] flex relative md:mt-12">

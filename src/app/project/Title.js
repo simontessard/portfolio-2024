@@ -19,7 +19,6 @@ export default function Title({ text }) {
             }, {
                 scrollTrigger: {
                     trigger: title.current,
-                    markers: true,
                     start: "top 40%",
                     end: "bottom 80%",
                     scrub: 1,

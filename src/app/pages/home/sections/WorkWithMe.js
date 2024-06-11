@@ -15,14 +15,14 @@ export function WorkWithMe() {
 
         mm.add("(min-width: 800px)", () => {
             gsap.fromTo(section.current, {
-                y: 100,
+                y: 0,
             }, {
                 scrollTrigger: {
                     trigger: section.current,
                     start: "top 50%",
                     scrub: 1,
                 },
-                y: 0,
+                y: -25,
             });
             gsap.to('.baseCube', {
                 scrollTrigger: {

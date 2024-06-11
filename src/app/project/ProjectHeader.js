@@ -50,7 +50,7 @@ export default function ProjectHeader({ text, img }) {
             </div>
                 <Title text={text} />
             <div ref={scrollButton} className={"absolute bottom-32 md:bottom-20 flex w-full justify-center"}>
-                <ScrollDownButton />
+                <ScrollDownButton text="Scrollez pour découvrir" />
             </div>
         </div>
     );

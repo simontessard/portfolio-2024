@@ -3,7 +3,7 @@ import {useLayoutEffect} from "react";
 import {useRef} from "react";
 import {gsap} from "gsap";
 
-export default function ScrollDownButton() {
+export default function ScrollDownButton({text}) {
     const arrow = useRef(null);
 
     useLayoutEffect(() => {
@@ -28,7 +28,7 @@ export default function ScrollDownButton() {
     }, []);
     return (
         <button className={"relative overflow-hidden h-5 md:text-lg uppercase pr-6"}>
-            Scrollez pour découvrir
+            {text}
             <span ref={arrow} className="absolute -top-full right-0 h-4 font-marbry text-xl md:text-2xl">↓</span>
         </button>
     );
