@@ -110,7 +110,7 @@ export function Header() {
             </div>
             <div ref={nav} className="bg-black">
                <div className="container h-screen flex flex-col items-center justify-center pb-16 md:pb-28 bg-black">
-                  <div className="flex flex-col gap-14 justify-center h-full text-5xl">
+                  <div className="flex flex-col gap-14 justify-center h-full text-5xl md:text-7xl">
                       {navLinks.map((link) => (
                           <NavElement key={link.id} {...link} handleClick={handleClick} />
                       ))}

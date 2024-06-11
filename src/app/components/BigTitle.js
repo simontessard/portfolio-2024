@@ -12,8 +12,8 @@ export function BigTitle({title, color, multipleWords = false}) {
             const chars = splitText.current.querySelectorAll('.char');
 
             gsap.fromTo(chars , {
-                paddingRight: '8px',
-                marginLeft: '-8px',
+                paddingRight: '12px',
+                marginLeft: '-12px',
                 opacity: 0,
                 yPercent: 100,
             }, {
@@ -33,7 +33,7 @@ export function BigTitle({title, color, multipleWords = false}) {
 
     return (
         <h2 className={`font-sans text-${color} text-5xl md:text-9xl tracking-tight uppercase w-fit mb-12 md:mb-16`}>
-           <div className="overflow-hidden italic px-[8px]">
+           <div className="overflow-hidden italic px-[12px]">
               <span ref={splitText} className="block">{title}</span>
            </div>
         </h2>
