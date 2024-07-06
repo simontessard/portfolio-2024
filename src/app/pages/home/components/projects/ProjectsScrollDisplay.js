@@ -58,7 +58,7 @@ export function ProjectsScrollDisplay() {
                 <div className="left md:w-1/2">
                     <ul className="desktopContent max-md:hidden mr-auto w-4/5 text-white">
                         {projects.map((project, index) => (
-                            <li className="desktopContentSection min-h-dvh flex flex-col justify-center">
+                            <li key={index} className="desktopContentSection min-h-dvh flex flex-col justify-center">
                                 <h1 className={"md:text-6xl mb-4"}>{project.title}</h1>
                                 <p className={"mb-12"}>{project.date}</p>
                                 <p className={"md:text-lg md:mb-20"}>{project.description}</p>
@@ -87,7 +87,7 @@ export function ProjectsScrollDisplay() {
 
                     <div className="group max-md:hidden relative w-[40vw] h-[40vw] overflow-hidden">
                         {projects.map((project, index) => (
-                            <Link href={`/project/${project.id}`} className={`desktopPhoto absolute flex flex-col w-full h-full ${project.color}`}>
+                            <Link key={index} href={`/project/${project.id}`} className={`desktopPhoto absolute flex flex-col w-full h-full ${project.color}`}>
                                 <img className={"w-full h-full object-cover"} src={project.cover} alt={project.title}/>
                                 <div className="absolute w-full h-full bg-black/15"></div>
                             </Link>
