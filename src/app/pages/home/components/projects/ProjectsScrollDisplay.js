@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { projects } from "@/app/data/data";
 import Link from "next/link";
-import ProjectsMobileDisplay from "@/app/pages/home/components/ProjectsMobileDisplay";
+import ProjectsMobileDisplay from "@/app/pages/home/components/projects/ProjectsMobileDisplay";
 
 export function ProjectsScrollDisplay() {
     gsap.registerPlugin(ScrollTrigger);

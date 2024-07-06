@@ -1,5 +1,5 @@
 import { BigTitle } from "@/app/components/BigTitle";
-import {ProjectsScrollDisplay} from "@/app/pages/home/components/ProjectsScrollDisplay";
+import {ProjectsScrollDisplay} from "@/app/pages/home/components/projects/ProjectsScrollDisplay";
 import Link from "next/link";
 import {Button} from "@/app/components/Buttons/Button";
 
