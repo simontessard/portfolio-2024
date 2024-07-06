@@ -45,17 +45,12 @@ export default function SkillsScrollDisplay() {
         );
 
         return () => {
-            {/* A return function for killing the animation on component unmount */ }
             pin.kill();
         };
     }, []);
 
     return (
         <section className="overflow-hidden text-white text-6xl">
-            {/* The section up act just as a wrapper. If the trigger (below) is the
-                first jsx element in the component, you get an error on route change */}
-            {/* The div below act just as a trigger. As the doc suggests, the trigger and
-                the animation should alway be two separated refs */}
             <div ref={triggerRef} className={"relative"}>
                 <div className={"absolute top-12 w-full"}>
                     <div className={"container max-md:w-full max-md:flex max-md:justify-center md:mt-6"}>
