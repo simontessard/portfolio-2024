@@ -7,13 +7,15 @@ export function HeroHeader() {
             <div className="container z-10">
                 <div className="flex max-lg:flex-col justify-between items-center h-full">
                     <div className="flex flex-col justify-center max-md:text-center">
-                        <h1 className="flex flex-col font-sans font-bold text-6xl md:text-9xl uppercase mb-4">
+                        <div className="flex flex-col font-sans font-bold text-6xl md:text-9xl uppercase mb-4">
                             <span className={"italic md:text-[16vh]"}>Simon</span>
-                            <span className={"md:text-[16vh]"}>
-                            TESSARD
-                            <span className="max-md:hidden ml-3 text-6xl">👨🏼‍💻</span>
-                        </span>
-                        </h1>
+                            <div className="flex items-end">
+                                <span className={"md:text-[16vh]"}>
+                                    TESSARD
+                                </span>
+                                <span className="max-md:hidden block ml-3 text-6xl pb-5">👨🏼‍💻</span>
+                            </div>
+                        </div>
                         <span className="text-4xl md:hidden mt-2 mb-4">👨🏼‍💻</span>
                     </div>
                     <Shapes/>

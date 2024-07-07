@@ -65,7 +65,7 @@ export default function SkillsScrollDisplay() {
                 <ul ref={sectionRef} className="h-dvh w-[400vw] flex relative md:mt-12">
                     {skills.map((skill, index) => (
                         <li key={index} className="h-dvh w-dvw flex justify-center items-center">
-                            <div className={`relative h-[30dvh] md:h-[40dvh] flex flex-col justify-between p-4 md:p-8 w-[86vw] md:w-[60vw] bg-blue-700`}>
+                            <div className={`relative h-[30dvh] md:h-[40dvh] flex flex-col justify-between p-4 md:p-8 w-[86vw] md:w-[60vw] ${skill.color}`}>
                                 <div className="self-end">
                                     <svg className={"size-20 md:size-28"} viewBox="0 0 138 138" fill="none">
                                         <path fillRule="evenodd" fill="#1C1C1C"
