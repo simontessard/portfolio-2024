@@ -5,7 +5,7 @@ import gsap from 'gsap';
 
 export default function Index({skills}) {
     return (
-        <div className={"relative max-md:overflow-hidden text-white text-sm md:text-3xl uppercase mt-6 mb-12 md:mb-60"} >
+        <div className={"relative max-md:overflow-hidden text-white text-sm md:text-2xl uppercase mt-6 mb-12 md:mb-60"} >
             { skills.map( (skill, index) => { return <AnimatedText key={index}>{skill}</AnimatedText> }) }
         </div>
     )
@@ -56,6 +56,9 @@ function AnimatedText({children}) {
     }, [])
 
     return <p ref={text} className={"relative opacity-0 flex gap-4 md:gap-6 mb-4 md:mb-8"}>
-                <span className="text-xs md:text-sm font-mono md:pt-1.5"> ■ </span>
-                    {children} </p>
+                <span className="text-xs md:text-sm font-mono md:pt-1.5">
+                    ■
+                </span>
+                {children}
+           </p>
 }

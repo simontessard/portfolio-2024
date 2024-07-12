@@ -13,7 +13,7 @@ export function HeroHeader() {
                                 <span className={"md:text-[16vh]"}>
                                     TESSARD
                                 </span>
-                                <span className="max-md:hidden block ml-3 text-6xl pb-5">👨🏼‍💻</span>
+                                <span className="max-md:hidden block ml-4 text-6xl pb-5">👨🏼‍💻</span>
                             </div>
                         </div>
                         <span className="text-4xl md:hidden mt-2 mb-4">👨🏼‍💻</span>
