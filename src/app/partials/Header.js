@@ -89,8 +89,8 @@ export function Header() {
     }, [isOpen]);
 
     return (
-        <header className="fixed z-40 w-full top-0 h-16 md:h-28">
-            <div ref={header} className="relative z-40 bg-black max-md:p-1.5 md:py-4">
+        <header ref={header} className="fixed z-40 w-full top-0 h-16 md:h-28">
+            <div className="relative z-40 bg-black max-md:p-1.5 md:py-4">
                 <div className="max-md:container bg-black py-4 md:px-12 flex justify-between items-center">
                     <Image src={Logo} width={20} height={20} alt="Logo S"/>
                     <button onClick={handleClick} className="relative w-6 h-6 overflow-hidden md:hidden">
