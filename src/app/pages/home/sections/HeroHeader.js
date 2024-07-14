@@ -7,7 +7,8 @@ export function HeroHeader() {
             <div className="container z-10">
                 <div className="flex max-lg:flex-col justify-between items-center h-full">
                     <div className="flex flex-col justify-center max-md:text-center">
-                        <div className="flex flex-col font-sans font-bold text-6xl md:text-9xl uppercase mb-4">
+                        <div className="relative flex flex-col font-sans font-bold text-6xl md:text-9xl uppercase mb-4">
+                            <div className="absolute bottom-0 md:-top-6 max-md:right-0 max-md:mx-auto left-0 md:-left-6 -z-10 size-28 md:size-36 bg-blue-700 blur-2xl md:blur-3xl rounded-full "></div>
                             <span className={"italic md:text-[16vh]"}>Simon</span>
                             <div className="flex items-end">
                                 <span className={"md:text-[16vh]"}>

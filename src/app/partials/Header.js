@@ -40,9 +40,10 @@ export function Header() {
                 .timeline({paused: true})
                 // Hamburger icon animation
                 .to(['.hamburgerLines', '.hamburgerDesktop'], {
-                    xPercent: 100,
+                    xPercent: 102,
                     stagger: 0.05,
                     duration: 0.4,
+                    ease: "power1.inOut"
                 })
                 // Cross icon animation
                 .set('.crossButton', {display: 'block'}, 0.5)
@@ -98,8 +99,8 @@ export function Header() {
                         <div className="hamburgerLines absolute top-2.5 text-white h-0.5 bg-white w-6"></div>
                         <div className="hamburgerLines absolute top-[1.125rem] text-white h-0.5 bg-white w-6"></div>
                     </button>
-                    <button onClick={handleClick} className="overflow-hidden max-md:hidden h-6 text-white text-lg uppercase">
-                        <div className="hamburgerDesktop">Menu</div>
+                    <button onClick={handleClick} className="overflow-hidden max-md:hidden h-10 leading-7 text-black uppercase">
+                        <div className="hamburgerDesktop flex items-center gap-2 bg-white py-2 px-4">Menu <span className="inline-block mb-0.5 size-1.5 rounded-full bg-black"></span></div>
                     </button>
                     <button onClick={handleClick} className="crossButton hidden relative w-6 h-6 overflow-hidden">
                         <div className="cross absolute -top-2 -left-full text-white h-0.5 bg-white w-6 rotate-45"></div>

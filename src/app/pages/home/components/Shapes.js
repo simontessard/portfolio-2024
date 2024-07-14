@@ -24,6 +24,7 @@ export function Shapes() {
                         scale={40}
                         blur={1}
                         far={9}
+                        color="#FFFFFF"
                     />
                     <Environment preset="studio" />
                 </Suspense>
