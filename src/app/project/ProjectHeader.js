@@ -1,17 +1,17 @@
 import ScrollDownButton from "@/app/components/Buttons/ScrollDownButton";
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
 import GoBackButton from "@/app/components/Buttons/GoBackButton";
 import Title from "@/app/project/Title";
+import {useGSAP} from "@gsap/react";
 
 export default function ProjectHeader({ text, img }) {
     const backgroundImg = useRef(null);
     const goBackButton = useRef(null);
     const scrollButton = useRef(null);
 
-    useLayoutEffect(() => {
+    useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
 
         const tl = gsap.timeline({
@@ -37,7 +37,8 @@ export default function ProjectHeader({ text, img }) {
         tl.to(goBackButton.current, {
             opacity: 1,
         }, 0.5);
-    }, []);
+        }
+    );
 
     return (
         <div className={"relative h-screen w-full"}>
@@ -45,7 +46,7 @@ export default function ProjectHeader({ text, img }) {
                 <GoBackButton />
             </div>
             <div ref={backgroundImg} className="relative w-full h-full overflow-hidden">
-                <Image className={"w-full h-full object-cover"} width={'2000'} height={'2000'} src={img} alt={"random"} />
+                <img className={"w-full h-full object-cover"} width={'2000'} height={'2000'} src={img} alt={"random"} />
                 <div className={"absolute top-0 left-0 w-full h-full bg-black/40"}></div>
             </div>
                 <Title text={text} />

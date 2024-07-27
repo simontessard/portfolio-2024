@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { projects } from "@/app/data/data";
 
 export default function BottomPreviem({ id }) {
@@ -21,8 +20,8 @@ export default function BottomPreviem({ id }) {
                     <div className="absolute bottom-0 -left-full md:group-hover:translate-x-full transition-transform duration-500 w-full h-1 bg-white"></div>
                 </div>
                 <div className="absolute md:group-hover:opacity-0 transition-opacity duration-500 z-10 top-0 w-full h-full md:bg-white"></div>
-                <Image className="absolute md:group-hover:scale-110 transition-transform duration-500 object-cover w-full h-full"
-                       src={projects[prevProjectId].cover} width={1000} height={1000} alt="random" />
+                <img className="absolute md:group-hover:scale-110 transition-transform duration-500 object-cover w-full h-full"
+                       src={projects[prevProjectId].cover} alt="random" />
             </Link>
             <Link href={`/project/${nextProjectId}`}
                   className="group relative overflow-hidden flex flex-col items-center justify-center text-black w-1/2 aspect-square">
@@ -36,8 +35,8 @@ export default function BottomPreviem({ id }) {
                     <div className="absolute bottom-0 -left-full md:group-hover:translate-x-full transition-transform duration-500 w-full h-1 bg-white"></div>
                 </div>
                 <div className="absolute md:group-hover:opacity-0 transition-opacity duration-500 z-10 top-0 w-full h-full md:bg-white"></div>
-                <Image className="absolute md:group-hover:scale-110 transition-transform duration-500 object-cover w-full h-full"
-                       src={projects[nextProjectId].cover} width={1000} height={1000} alt="random" />
+                <img className="absolute md:group-hover:scale-110 transition-transform duration-500 object-cover w-full h-full"
+                       src={projects[nextProjectId].cover} alt="random" />
             </Link>
         </div>
     );

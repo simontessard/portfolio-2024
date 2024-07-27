@@ -3,13 +3,13 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useGSAP} from "@gsap/react";
 import {useRef} from "react";
 
-gsap.registerPlugin(ScrollTrigger);
-
 export function SquareImage({src}) {
     const imgRef = useRef(null);
 
     useGSAP(
         () => {
+            gsap.registerPlugin(ScrollTrigger);
+
             let mm = gsap.matchMedia();
 
             mm.add("(min-width: 768px)", () => {

@@ -15,8 +15,7 @@ export default function Index({skills}) {
 function AnimatedText({children}) {
     const text = useRef(null);
 
-    useGSAP(
-        () => {
+    useGSAP(() => {
             gsap.registerPlugin(ScrollTrigger);
 
             let mm = gsap.matchMedia();

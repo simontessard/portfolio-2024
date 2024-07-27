@@ -1,12 +1,13 @@
-import { useRef, useLayoutEffect } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
+import {useGSAP} from "@gsap/react";
 
 export default function Title({ text }) {
     const title = useRef(null);
 
-    useLayoutEffect(() => {
+    useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
 
         if (title.current) {
@@ -29,7 +30,7 @@ export default function Title({ text }) {
                 stagger: 0.05,
             });
         }
-    }, []);
+    });
 
     return (
         <div className={"absolute z-0 flex flex-col items-center justify-center top-0 h-full w-full"}>

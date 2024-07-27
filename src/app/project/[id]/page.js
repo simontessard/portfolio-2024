@@ -1,7 +1,7 @@
 "use client"
 import { useParams } from "next/navigation";
 import Template from "@/app/utils/PageTransition";
-import {useLayoutEffect, useRef} from "react";
+import { useRef} from "react";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import BottomPreview from "@/app/project/BottomPreview";
@@ -10,6 +10,7 @@ import ProjectHeader from "@/app/project/ProjectHeader";
 import {Overview} from "@/app/project/Overview";
 import {SquareImage} from "@/app/project/SquareImage";
 import { projects } from "@/app/data/data";
+import {useGSAP} from "@gsap/react";
 
 export default function ProjectPage() {
     const params = useParams();
@@ -17,7 +18,7 @@ export default function ProjectPage() {
     const section = useRef(null);
     const contentSection = useRef(null);
 
-    useLayoutEffect(() => {
+    useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
 
         let mm = gsap.matchMedia();
@@ -38,7 +39,7 @@ export default function ProjectPage() {
                 ease: 'none'
             });
         });
-    }, []);
+    });
     return (
         <section className="flex flex-col items-center text-white">
             <Template color={"white"}/>
@@ -76,7 +77,7 @@ export default function ProjectPage() {
 function Paragraph({children}) {
     const paragraph = useRef(null);
 
-    useLayoutEffect(() => {
+    useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
 
         let mm = gsap.matchMedia();
