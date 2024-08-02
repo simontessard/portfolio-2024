@@ -1,16 +1,17 @@
 "use client";
-import React, { useRef, useLayoutEffect } from "react";
+import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {ContactButton} from "@/app/components/Buttons/ContactButton";
 import {BigTitle} from "@/app/components/BigTitle";
+import {useGSAP} from "@gsap/react";
 
 export function WorkWithMe() {
     const section = useRef(null);
 
     gsap.registerPlugin(ScrollTrigger);
 
-    useLayoutEffect(() => {
+    useGSAP(() => {
         let mm = gsap.matchMedia();
 
         mm.add("(min-width: 800px)", () => {
@@ -44,7 +45,7 @@ export function WorkWithMe() {
             });
 
         });
-    }, []);
+    });
   return (
       <section ref={section} className={"relative bg-white py-16 md:py-28 overflow-hidden"}>
           <div className="container text-black">

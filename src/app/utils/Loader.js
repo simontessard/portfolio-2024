@@ -1,9 +1,10 @@
 "use client";
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Logo from "@/app/assets/img/Logo.png";
 import Image from "next/image";
+import {useGSAP} from "@gsap/react";
 
 export function Loader() {
     gsap.registerPlugin(ScrollTrigger);
@@ -12,8 +13,7 @@ export function Loader() {
     const flash = useRef(null);
     const bar = useRef(null);
 
-    useLayoutEffect(() => {
-        let ctx = gsap.context(() => {
+    useGSAP(() => {
 
             const tl = gsap.timeline();
 
@@ -47,9 +47,6 @@ export function Loader() {
                             gsap.set(bar.current, {opacity: 0});
                         }
                     }), 0);
-
-            return () => ctx.revert();
-        }, []);
     });
 
     return (

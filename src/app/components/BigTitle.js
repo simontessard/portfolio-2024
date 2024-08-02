@@ -1,12 +1,13 @@
 "use client";
-import {useLayoutEffect, useRef} from "react";
+import {useRef} from "react";
 import SplitType from "split-type";
 import { gsap } from "gsap";
+import {useGSAP} from "@gsap/react";
 
 export function BigTitle({title, color, multipleWords = false}) {
     const splitText = useRef(null);
 
-    useLayoutEffect(() => {
+    useGSAP(() => {
         if (splitText.current) {
             const text = SplitType.create(splitText.current, {types: 'chars'})
             const chars = splitText.current.querySelectorAll('.char');
@@ -29,7 +30,7 @@ export function BigTitle({title, color, multipleWords = false}) {
                 stagger: 0.05,
             });
         }
-    }, []);
+    });
 
     return (
         <h2 className={`font-sans text-${color} text-5xl md:text-9xl tracking-tight uppercase w-fit mb-12 md:mb-16`}>

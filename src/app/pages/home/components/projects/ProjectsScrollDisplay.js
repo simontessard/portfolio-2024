@@ -1,43 +1,44 @@
 "use client";
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { projects } from "@/app/data/data";
 import Link from "next/link";
 import ProjectsMobileDisplay from "@/app/pages/home/components/projects/ProjectsMobileDisplay";
+import {useGSAP} from "@gsap/react";
 
 export function ProjectsScrollDisplay() {
     gsap.registerPlugin(ScrollTrigger);
 
-    useLayoutEffect(() => {
-        let ctx = gsap.context(() => {
-            const detailsNoFirstChild = gsap.utils.toArray(".desktopContentSection:not(:first-child)")
-            const details = gsap.utils.toArray(".desktopContentSection:not(:first-child)")
-            const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)")
+    useGSAP(() => {
+        gsap.registerPlugin(ScrollTrigger);
 
-            gsap.set(photos, {yPercent:101})
+        const detailsNoFirstChild = gsap.utils.toArray(".desktopContentSection:not(:first-child)")
+        const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)")
 
-            const allPhotos = gsap.utils.toArray(".desktopPhoto")
+        gsap.set(photos, { opacity: 0, display: 'none', willChange: 'opacity, display' });
 
-            let mm = gsap.matchMedia();
+        const allPhotos = gsap.utils.toArray(".desktopPhoto")
 
-            mm.add("(min-width: 768px)", () => {
+        let mm = gsap.matchMedia();
 
-                ScrollTrigger.create({
+        mm.add("(min-width: 768px)", () => {
+
+           ScrollTrigger.create({
                     trigger:".gallery",
                     start:"top top",
                     end:"bottom bottom",
                     pin:".right"
-                })
+           })
 
-                //  create scrolltrigger for each details section
-                //  trigger photo animation when headline of each details section
-                //  reaches 80% of window height
-                detailsNoFirstChild.forEach((detail, index)=> {
+           //  create scrolltrigger for each details section
+           //  trigger photo animation when headline of each details section
+           //  reaches 80% of window height
+           detailsNoFirstChild.forEach((detail, index)=> {
 
                     let headline = detail.querySelector("h1")
                     let animation = gsap.timeline()
-                        .to(photos[index], {yPercent:0})
+                        .to(photos[index], {opacity:1, display:"block"})
                         .set(allPhotos[index], {autoAlpha:0})
                     ScrollTrigger.create({
                         trigger:headline,
@@ -45,13 +46,10 @@ export function ProjectsScrollDisplay() {
                         end:"top 50%",
                         animation:animation,
                         scrub:true,
-                        markers:false
                     })
-                })
-            });
+           })
         });
-        return () => ctx.revert();
-    }, []);
+    });
     return (
         <section className={"w-full"}>
             <div className="gallery flex">
@@ -85,15 +83,15 @@ export function ProjectsScrollDisplay() {
 
                     <ProjectsMobileDisplay/>
 
-                    <div className="group max-md:hidden relative w-[40vw] h-[40vw] overflow-hidden">
+                    <div className="group max-md:hidden relative size-[30vw] md:ml-auto overflow-hidden">
                         {projects.map((project, index) => (
                             <Link key={index} href={`/project/${project.id}`} className={`desktopPhoto absolute flex flex-col w-full h-full ${project.color}`}>
                                 <img className={"w-full h-full object-cover"} src={project.cover} alt={project.title}/>
-                                <div className="absolute w-full h-full bg-black/15"></div>
+                                <div className="absolute size-full bg-black/15"></div>
                             </Link>
                         ))}
                         <span className="absolute right-10 top-10 font-marbry font-light text-5xl self-end
-                        md:group-hover:translate-x-1 md:group-hover:-translate-y-1 transition-transform">↗</span>
+                        md:group-hover:translate-x-1 md:group-hover:-translate-y-1 duration-500 transition-transform">↗</span>
                     </div>
                 </div>
             </div>

@@ -1,12 +1,12 @@
 "use client"
-import {useLayoutEffect} from "react";
 import {useRef} from "react";
 import {gsap} from "gsap";
+import {useGSAP} from "@gsap/react";
 
 export default function ScrollDownButton({text}) {
     const arrow = useRef(null);
 
-    useLayoutEffect(() => {
+    useGSAP(() => {
         const tl = gsap.timeline();
 
         // From up to text
@@ -25,7 +25,7 @@ export default function ScrollDownButton({text}) {
                 });
             }
         }, .3);
-    }, []);
+    });
     return (
         <button className={"relative overflow-hidden h-5 md:text-lg uppercase pr-6"}>
             {text}
