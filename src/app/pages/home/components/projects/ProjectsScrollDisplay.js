@@ -68,14 +68,14 @@ export function ProjectsScrollDisplay() {
                                     <div className="flex gap-4">
                                         {project.technologies.map((tagItem, index) => (
                                             <span key={index}
-                                                  className="w-fit border border-white text-white text-xs pt-2.5 pb-1.5 px-3">{tagItem}</span>
+                                                  className="w-fit border border-white text-white text-sm pt-2.5 pb-1.5 px-3">{tagItem}</span>
                                         ))}
                                     </div>
                                     <Link href={`/project/${project.id}`}
-                                          className={"group relative shrink-0 bg-white leading-none pt-2.5 pb-2 px-5 text-black md:hover:text-white transition-colors duration-500 uppercase overflow-hidden"}>
+                                          className={"group relative size-fit bg-white leading-none pt-2.5 pb-2 px-5 text-black md:hover:text-white transition-colors duration-500 uppercase overflow-hidden"}>
                                         <span className="relative z-10">Voir plus</span>
                                         <span className="relative z-10 ml-2 text-xl md:text-xl font-marbry">↗</span>
-                                        <div className={`absolute -bottom-24 left-0 md:group-hover:-translate-y-full transition-transform duration-500 w-full h-24 ${project.color}`}></div>
+                                        <div className={`absolute -bottom-full left-0 md:group-hover:-translate-y-[96%] transition-transform duration-500 w-full h-[103%] ${project.color}`}></div>
                                     </Link>
                                 </div>
                             </li>

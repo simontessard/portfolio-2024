@@ -13,6 +13,7 @@ export function Header() {
 
     const nav = useRef(null);
     const header = useRef(null);
+    const bandeauHeader = useRef(null);
 
     const navLinks = [
         { id: '01', href: '/', text: 'Accueil' },
@@ -33,18 +34,26 @@ export function Header() {
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
             gsap.registerPlugin(gsap, ScrollTrigger);
-            gsap.set(nav.current, {zIndex: 30, yPercent: -150});
+            gsap.set(nav.current, {yPercent: -150});
 
             // Hamburger icon animation
             tl.current = gsap
                 .timeline({paused: true})
+
+                .to(bandeauHeader.current, {
+                    backgroundColor: 'black',
+                    duration: 0.4,
+                    ease: "power1.inOut"
+                }, 0)
+
                 // Hamburger icon animation
                 .to(['.hamburgerLines', '.hamburgerDesktop'], {
                     xPercent: 102,
                     stagger: 0.05,
                     duration: 0.4,
                     ease: "power1.inOut"
-                })
+                }, 0)
+
                 // Cross icon animation
                 .set('.crossButton', {display: 'block'}, 0.5)
                 .to('.cross:nth-child(1)', {
@@ -52,11 +61,13 @@ export function Header() {
                     y: '1rem',
                     duration: 0.3
                 }, 0.5)
+
                 .to('.cross:nth-child(2)', {
                     x: '-1.5rem',
                     y: '1rem',
                     duration: 0.3,
                 }, 0.6)
+
                 // Nav animation
                 .to(nav.current, {
                     yPercent: 0,
@@ -92,15 +103,15 @@ export function Header() {
     return (
         <header ref={header} className="fixed z-40 w-full top-0 h-16 md:h-28">
             <div className="relative z-40">
-                <div className="max-md:container bg-black p-1.5 md:py-6 md:px-12 flex justify-between items-center">
+                <div ref={bandeauHeader} className="max-md:container max-md:bg-black p-4 md:py-6 md:px-12 flex justify-between items-center">
                     <Image src={Logo} width={20} height={20} alt="Logo S"/>
                     <button onClick={handleClick} className="relative w-6 h-6 overflow-hidden md:hidden">
                         <div className="hamburgerLines absolute top-0.5 text-white h-0.5 bg-white w-6"></div>
                         <div className="hamburgerLines absolute top-2.5 text-white h-0.5 bg-white w-6"></div>
                         <div className="hamburgerLines absolute top-[1.125rem] text-white h-0.5 bg-white w-6"></div>
                     </button>
-                    <button onClick={handleClick} className="overflow-hidden max-md:hidden h-10 leading-7 text-black uppercase">
-                        <div className="hamburgerDesktop flex items-center gap-2 bg-white py-2 px-4">Menu <span className="inline-block mb-0.5 size-1.5 rounded-full bg-black"></span></div>
+                    <button onClick={handleClick} className="overflow-hidden max-md:hidden h-10 leading-5 text-black uppercase">
+                        <div className="hamburgerDesktop flex items-center gap-2 bg-white border border-black shadow pt-2.5 pb-2 px-4">Menu <span className="inline-block mb-0.5 size-1.5 rounded-full bg-black"></span></div>
                     </button>
                     <button onClick={handleClick} className="crossButton hidden relative w-6 h-6 overflow-hidden">
                         <div className="cross absolute -top-2 -left-full text-white h-0.5 bg-white w-6 rotate-45"></div>
@@ -109,7 +120,7 @@ export function Header() {
                     </button>
                 </div>
             </div>
-            <div ref={nav} className="bg-black">
+            <div ref={nav} className="relative z-30 bg-black">
                <div className="container h-screen flex flex-col items-center justify-center pb-16 md:pb-28 bg-black">
                   <div className="flex flex-col gap-14 justify-center h-full text-5xl md:text-7xl">
                       {navLinks.map((link) => (
@@ -125,9 +136,9 @@ export function Header() {
 function NavElement({ id, href, text, handleClick }) {
     return (
         <Link href={href} onClick={handleClick}
-              className="flex gap-6 overflow-hidden text-gray-400 md:hover:text-white transition-colors">
+              className="flex gap-6 overflow-hidden text-gray-400 md:hover:text-white duration-500 delay-75 transition-colors">
             <span className="text-sm w-3">{id}</span>
-            <p className="navElement">{text}</p>
+            <p className="navElement font-marbry">{text}</p>
         </Link>
     );
 }

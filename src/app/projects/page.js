@@ -1,35 +1,33 @@
 "use client";
 import {gsap} from "gsap";
-import {useLayoutEffect, useRef} from "react";
 import { projects } from "@/app/data/data";
 import {BigTitle} from "@/app/components/BigTitle";
 import Link from "next/link";
 import Template from "@/app/utils/PageTransition";
 import GoBackButton from "@/app/components/Buttons/GoBackButton";
+import {useGSAP} from "@gsap/react";
 
 export default function ProjectsPage() {
 
-    useLayoutEffect( () => {
-        let ctx = gsap.context(() => {
+    useGSAP( () => {
             let mm = gsap.matchMedia();
 
-            mm.add("(min-width: 800px)", () => {
+            mm.add("(min-width: 768px)", () => {
                 const projectsProject = document.querySelectorAll('.projects-project');
                 const cursor = document.querySelector(".cursor");
                 const cursorMedias = document.querySelectorAll(".cursor__media");
 
                 gsap.set(cursor, {
                     xPercent: -50,
-                    yPercent: -80,
-                    scale: 0
+                    yPercent: -50,
                 });
 
                 const setCursorX = gsap.quickTo(cursor, "x", { duration: 0.6, ease: "expo"});
                 const setCursorY = gsap.quickTo(cursor, "y", { duration: 0.6, ease: "expo"});
 
                 window.addEventListener("mousemove", (e) => {
-                    setCursorX(e.pageX);
-                    setCursorY(e.pageY);
+                    setCursorX(e.pageX + 170);
+                    setCursorY(e.pageY + 145);
                 });
 
                 const tl = gsap.timeline({paused: true});
@@ -38,7 +36,6 @@ export default function ProjectsPage() {
                     scale: 1,
                     opacity: 1,
                     duration: 0.5,
-                    ease: "expo.inOut"
                 });
 
                 projectsProject.forEach((navLink, i) => {
@@ -55,9 +52,7 @@ export default function ProjectsPage() {
                     });
                 });
             });
-        });
-        return () => ctx.revert();
-    }, []);
+    });
     return (
         <section className="pt-8 md:pt-20 pb-20 bg-white text-black">
             <Template/>
@@ -72,15 +67,15 @@ export default function ProjectsPage() {
                                 <div className="flex items-end justify-between">
                                     {project.title}
                                     <span
-                                        className="md:group-hover:-translate-y-1 md:group-hover:translate-x-1 transition-transform mr-2 text-3xl md:text-5xl font-marbry">↗</span>
+                                        className="md:group-hover:-translate-y-1 md:group-hover:translate-x-1 duration-300 transition-transform mr-2 text-3xl md:text-5xl font-marbry">↗</span>
                                 </div>
                                 <div className="mt-2 md:mt-3 w-full h-[2px] bg-black/60"></div>
                             </Link>
                         ))}
                     </ul>
-                    <div className="cursor fixed z-0 top-0 left-0 size-72 opacity-0 pointer-events-none">
+                    <div className="cursor fixed z-0 top-0 left-0 size-72 scale-0 opacity-0 pointer-events-none">
                         {projects.map((project, index) => (
-                            <img className={"cursor__media opacity-0 absolute w-full h-full object-cover"}
+                            <img className={"cursor__media opacity-0 transition-opacity absolute size-full object-cover"}
                                  src={project.cover} alt={project.title}/>
                         ))}
                     </div>
