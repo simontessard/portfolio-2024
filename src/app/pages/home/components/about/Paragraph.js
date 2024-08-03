@@ -1,11 +1,12 @@
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
-import {useLayoutEffect, useRef} from "react";
+import {useRef} from "react";
+import {useGSAP} from "@gsap/react";
 
 export default function Paragraph({ children }) {
     const text = useRef(null);
 
-    useLayoutEffect(() => {
+    useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
         let mm = gsap.matchMedia();
 

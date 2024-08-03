@@ -36,17 +36,21 @@ export function ProjectsScrollDisplay() {
            //  reaches 80% of window height
            detailsNoFirstChild.forEach((detail, index)=> {
 
-                    let headline = detail.querySelector("h1")
-                    let animation = gsap.timeline()
-                        .to(photos[index], {opacity:1, display:"block"})
-                        .set(allPhotos[index], {autoAlpha:0})
-                    ScrollTrigger.create({
+               const headline = detail.querySelector('h1');
+               const currentPhoto = photos[index];
+               const currentAllPhoto = allPhotos[index];
+
+               const animation = gsap.timeline()
+                   .to(currentPhoto, { opacity: 1, display: 'block' })
+                   .set(currentAllPhoto, { autoAlpha: 0 });
+
+               ScrollTrigger.create({
                         trigger:headline,
                         start:"top 80%",
                         end:"top 50%",
                         animation:animation,
                         scrub:true,
-                    })
+               })
            })
         });
     });

@@ -15,38 +15,13 @@ import {useGSAP} from "@gsap/react";
 export default function ProjectPage() {
     const params = useParams();
 
-    const section = useRef(null);
-    const contentSection = useRef(null);
-
-    useGSAP(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        let mm = gsap.matchMedia();
-
-        mm.add("(min-width: 768px)", () => {
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: section.current,
-                    scrub: true,
-                }
-            });
-
-            tl.fromTo(section.current, {
-                yPercent: 0,
-                ease: 'none'
-            },{
-                yPercent: -15,
-                ease: 'none'
-            });
-        });
-    });
     return (
         <section className="flex flex-col items-center text-white">
             <Template color={"white"}/>
             <ProjectHeader text={projects[params.id].title} img={projects[params.id].cover}/>
-            <div ref={section} className={"flex flex-col md:gap-32 pt-20 items-center w-full z-10"}>
+            <div className={"flex flex-col md:gap-32 pt-20 items-center w-full z-10"}>
                 <Overview date={projects[params.id].date} desc={projects[params.id].description} techno={projects[params.id].technologies} github={projects[params.id].github}/>
-                <div ref={contentSection} className={"md:container max-md:pb-16 md:pt-30"}>
+                <div className={"md:container max-md:pb-16 md:pt-30"}>
                     <Index skills={projects[params.id].skills}/>
                     <div className={"flex max-md:flex-col md:gap-40 items-center mb-20 md:mb-44"}>
                         <SquareImage src={projects[params.id].img1}/>
