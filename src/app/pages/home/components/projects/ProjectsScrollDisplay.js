@@ -89,7 +89,7 @@ export function ProjectsScrollDisplay() {
 
                     <div className="group max-md:hidden relative size-[30vw] md:ml-auto overflow-hidden">
                         {projects.map((project, index) => (
-                            <Link key={index} href={`/project/${project.id}`} className={`desktopPhoto will-change-transform absolute flex flex-col w-full h-full ${project.color}`}>
+                            <Link key={index} href={`/project/${project.id}`} className={`desktopPhoto will-change-auto absolute flex flex-col w-full h-full ${project.color}`}>
                                 <img className={"w-full h-full object-cover"} src={project.cover} alt={project.title}/>
                                 <div className="absolute size-full bg-black/15"></div>
                             </Link>
